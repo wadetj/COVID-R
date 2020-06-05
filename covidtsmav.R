@@ -8,7 +8,8 @@ library(reshape)
 library(timsRstuff)
 
 
-
+#read in daily case data at county level
+#from JHU
 read.jhu.ts<-function(county, lag=3, read=TRUE) {
   if(read) dat<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv", stringsAsFactors=FALSE)
   
