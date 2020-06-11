@@ -1,0 +1,815 @@
+Var1,FIPS_IN,FIPS_OUT,Res_State_Name,Res_County_Name,Work_State_Name,Work_County_Name,Workers in Commuting Flow,Facility
+9262,6075,6001,California,Alameda County,California,San Francisco County,92246,75 Hawthorne Street
+9267,6075,6013,California,Contra Costa County,California,San Francisco County,58089,75 Hawthorne Street
+9278,6075,6041,California,Marin County,California,San Francisco County,27614,75 Hawthorne Street
+9293,6075,6075,California,San Francisco County,California,San Francisco County,353484,75 Hawthorne Street
+9296,6075,6081,California,San Mateo County,California,San Francisco County,81943,75 Hawthorne Street
+9298,6075,6085,California,Santa Clara County,California,San Francisco County,14241,75 Hawthorne Street
+9302,6075,6095,California,Solano County,California,San Francisco County,8974,75 Hawthorne Street
+9303,6075,6097,California,Sonoma County,California,San Francisco County,6811,75 Hawthorne Street
+105280,46065,46065,South Dakota,Hughes County,South Dakota,Hughes County,8604,420 South Garfield
+105290,46065,46117,South Dakota,Stanley County,South Dakota,Hughes County,1029,420 South Garfield
+105291,46065,46119,South Dakota,Sully County,South Dakota,Hughes County,116,420 South Garfield
+9005,6073,6065,California,Riverside County,California,San Diego County,43613,610 West Ash Street
+9008,6073,6073,California,San Diego County,California,San Diego County,1461502,610 West Ash Street
+15821,12057,12057,Florida,Hillsborough County,Florida,Hillsborough County,531016,Airport Executive C Building
+15839,12057,12101,Florida,Pasco County,Florida,Hillsborough County,52456,Airport Executive C Building
+15840,12057,12103,Florida,Pinellas County,Florida,Hillsborough County,43617,Airport Executive C Building
+15841,12057,12105,Florida,Polk County,Florida,Hillsborough County,11914,Airport Executive C Building
+2465,2020,2020,Alaska,Anchorage Municipality,Alaska,Anchorage Municipality,151009,Alaska Operations Office-Anchorage
+2475,2020,2170,Alaska,Matanuska-Susitna Borough,Alaska,Anchorage Municipality,11787,Alaska Operations Office-Anchorage
+2790,2110,2110,Alaska,Juneau City and Borough,Alaska,Juneau City and Borough,17273,Alaska Operations Office-Juneau
+89568,39061,18029,Indiana,Dearborn County,Ohio,Hamilton County,8047,Andrew W. Breidenbach Environmental Research Center
+89600,39061,21015,Kentucky,Boone County,Ohio,Hamilton County,10386,Andrew W. Breidenbach Environmental Research Center
+89604,39061,21037,Kentucky,Campbell County,Ohio,Hamilton County,14899,Andrew W. Breidenbach Environmental Research Center
+89618,39061,21117,Kentucky,Kenton County,Ohio,Hamilton County,18746,Andrew W. Breidenbach Environmental Research Center
+89698,39061,39017,Ohio,Butler County,Ohio,Hamilton County,48733,Andrew W. Breidenbach Environmental Research Center
+89701,39061,39025,Ohio,Clermont County,Ohio,Hamilton County,38856,Andrew W. Breidenbach Environmental Research Center
+89713,39061,39061,Ohio,Hamilton County,Ohio,Hamilton County,304920,Andrew W. Breidenbach Environmental Research Center
+89749,39061,39165,Ohio,Warren County,Ohio,Hamilton County,27975,Andrew W. Breidenbach Environmental Research Center
+49342,24003,24003,Maryland,Anne Arundel County,Maryland,Anne Arundel County,168876,Annapolis City Marina
+49343,24003,24005,Maryland,Baltimore County,Maryland,Anne Arundel County,24340,Annapolis City Marina
+49344,24003,24009,Maryland,Calvert County,Maryland,Anne Arundel County,2992,Annapolis City Marina
+49346,24003,24013,Maryland,Carroll County,Maryland,Anne Arundel County,5049,Annapolis City Marina
+49352,24003,24025,Maryland,Harford County,Maryland,Anne Arundel County,3420,Annapolis City Marina
+49353,24003,24027,Maryland,Howard County,Maryland,Anne Arundel County,17598,Annapolis City Marina
+49355,24003,24031,Maryland,Montgomery County,Maryland,Anne Arundel County,5249,Annapolis City Marina
+49356,24003,24033,Maryland,Prince George's County,Maryland,Anne Arundel County,16075,Annapolis City Marina
+49357,24003,24035,Maryland,Queen Anne's County,Maryland,Anne Arundel County,5817,Annapolis City Marina
+49363,24003,24510,Maryland,Baltimore city,Maryland,Anne Arundel County,17180,Annapolis City Marina
+50653,24033,11001,District of Columbia,District of Columbia,Maryland,Prince George's County,16214,Ardwick Industrial Plaza
+50685,24033,24003,Maryland,Anne Arundel County,Maryland,Prince George's County,27927,Ardwick Industrial Plaza
+50686,24033,24005,Maryland,Baltimore County,Maryland,Prince George's County,6127,Ardwick Industrial Plaza
+50687,24033,24009,Maryland,Calvert County,Maryland,Prince George's County,9316,Ardwick Industrial Plaza
+50691,24033,24017,Maryland,Charles County,Maryland,Prince George's County,14062,Ardwick Industrial Plaza
+50696,24033,24027,Maryland,Howard County,Maryland,Prince George's County,14783,Ardwick Industrial Plaza
+50698,24033,24031,Maryland,Montgomery County,Maryland,Prince George's County,30835,Ardwick Industrial Plaza
+50699,24033,24033,Maryland,Prince George's County,Maryland,Prince George's County,177993,Ardwick Industrial Plaza
+50707,24033,24510,Maryland,Baltimore city,Maryland,Prince George's County,3671,Ardwick Industrial Plaza
+50811,24033,51059,Virginia,Fairfax County,Maryland,Prince George's County,11051,Ardwick Industrial Plaza
+12497,8093,8001,Colorado,Adams County,Colorado,Park County,69,Arvada Warehouse
+12498,8093,8015,Colorado,Chaffee County,Colorado,Park County,51,Arvada Warehouse
+12501,8093,8035,Colorado,Douglas County,Colorado,Park County,49,Arvada Warehouse
+12503,8093,8059,Colorado,Jefferson County,Colorado,Park County,175,Arvada Warehouse
+12504,8093,8065,Colorado,Lake County,Colorado,Park County,104,Arvada Warehouse
+12505,8093,8093,Colorado,Park County,Colorado,Park County,3117,Arvada Warehouse
+12507,8093,8117,Colorado,Summit County,Colorado,Park County,100,Arvada Warehouse
+12508,8093,8119,Colorado,Teller County,Colorado,Park County,157,Arvada Warehouse
+102489,44009,9011,Connecticut,New London County,Rhode Island,Washington County,2798,Atlantic Coastal Environmental Science Division
+102503,44009,25005,Massachusetts,Bristol County,Rhode Island,Washington County,625,Atlantic Coastal Environmental Science Division
+102527,44009,44003,Rhode Island,Kent County,Rhode Island,Washington County,7772,Atlantic Coastal Environmental Science Division
+102528,44009,44005,Rhode Island,Newport County,Rhode Island,Washington County,1628,Atlantic Coastal Environmental Science Division
+102529,44009,44007,Rhode Island,Providence County,Rhode Island,Washington County,5844,Atlantic Coastal Environmental Science Division
+102530,44009,44009,Rhode Island,Washington County,Rhode Island,Washington County,35193,Atlantic Coastal Environmental Science Division
+83188,37119,37025,North Carolina,Cabarrus County,North Carolina,Mecklenburg County,31431,Azalea Property
+83204,37119,37071,North Carolina,Gaston County,North Carolina,Mecklenburg County,25417,Azalea Property
+83211,37119,37097,North Carolina,Iredell County,North Carolina,Mecklenburg County,12960,Azalea Property
+83215,37119,37109,North Carolina,Lincoln County,North Carolina,Mecklenburg County,9305,Azalea Property
+83216,37119,37119,North Carolina,Mecklenburg County,North Carolina,Mecklenburg County,427172,Azalea Property
+83239,37119,37179,North Carolina,Union County,North Carolina,Mecklenburg County,41169,Azalea Property
+83317,37119,45057,South Carolina,Lancaster County,North Carolina,Mecklenburg County,7437,Azalea Property
+83329,37119,45091,South Carolina,York County,North Carolina,Mecklenburg County,33661,Azalea Property
+24857,16001,16001,Idaho,Ada County,Idaho,Ada County,181626,Banner Bank Building
+24865,16001,16027,Idaho,Canyon County,Idaho,Ada County,27337,Banner Bank Building
+85279,38015,38015,North Dakota,Burleigh County,North Dakota,Burleigh County,41684,Bismarck CID
+85295,38015,38059,North Dakota,Morton County,North Dakota,Burleigh County,7824,Bismarck CID
+16617,12086,12011,Florida,Broward County,Florida,Miami-Dade County,136169,Brickell Plaza Federal Office Building
+16639,12086,12086,Florida,Miami-Dade County,Florida,Miami-Dade County,1094476,Brickell Plaza Federal Office Building
+76616,36029,36029,New York,Erie County,New York,Erie County,404471,Buffalo Office - Region 2
+76630,36029,36063,New York,Niagara County,New York,Erie County,36227,Buffalo Office - Region 2
+71296,32003,32003,Nevada,Clark County,Nevada,Clark County,896293,Building 16B Spectrum
+46281,22033,22005,Louisiana,Ascension Parish,Louisiana,East Baton Rouge Parish,19479,Business Bank Centre (6100 Corporate Boulevard)
+46291,22033,22033,Louisiana,East Baton Rouge Parish,Louisiana,East Baton Rouge Parish,186286,Business Bank Centre (6100 Corporate Boulevard)
+46293,22033,22037,Louisiana,East Feliciana Parish,Louisiana,East Baton Rouge Parish,3117,Business Bank Centre (6100 Corporate Boulevard)
+46298,22033,22047,Louisiana,Iberville Parish,Louisiana,East Baton Rouge Parish,3662,Business Bank Centre (6100 Corporate Boulevard)
+46306,22033,22063,Louisiana,Livingston Parish,Louisiana,East Baton Rouge Parish,26911,Business Bank Centre (6100 Corporate Boulevard)
+46326,22033,22105,Louisiana,Tangipahoa Parish,Louisiana,East Baton Rouge Parish,2761,Business Bank Centre (6100 Corporate Boulevard)
+46332,22033,22121,Louisiana,West Baton Rouge Parish,Louisiana,East Baton Rouge Parish,5318,Business Bank Centre (6100 Corporate Boulevard)
+49342,24003,24003,Maryland,Anne Arundel County,Maryland,Anne Arundel County,168876,CBPO Office
+49343,24003,24005,Maryland,Baltimore County,Maryland,Anne Arundel County,24340,CBPO Office
+49344,24003,24009,Maryland,Calvert County,Maryland,Anne Arundel County,2992,CBPO Office
+49346,24003,24013,Maryland,Carroll County,Maryland,Anne Arundel County,5049,CBPO Office
+49352,24003,24025,Maryland,Harford County,Maryland,Anne Arundel County,3420,CBPO Office
+49353,24003,24027,Maryland,Howard County,Maryland,Anne Arundel County,17598,CBPO Office
+49355,24003,24031,Maryland,Montgomery County,Maryland,Anne Arundel County,5249,CBPO Office
+49356,24003,24033,Maryland,Prince George's County,Maryland,Anne Arundel County,16075,CBPO Office
+49357,24003,24035,Maryland,Queen Anne's County,Maryland,Anne Arundel County,5817,CBPO Office
+49363,24003,24510,Maryland,Baltimore city,Maryland,Anne Arundel County,17180,CBPO Office
+21852,13135,13013,Georgia,Barrow County,Georgia,Gwinnett County,10322,Carter-Pacific Business Center
+21863,13135,13067,Georgia,Cobb County,Georgia,Gwinnett County,8382,Carter-Pacific Business Center
+21869,13135,13089,Georgia,DeKalb County,Georgia,Gwinnett County,29218,Carter-Pacific Business Center
+21877,13135,13117,Georgia,Forsyth County,Georgia,Gwinnett County,8215,Carter-Pacific Business Center
+21879,13135,13121,Georgia,Fulton County,Georgia,Gwinnett County,19688,Carter-Pacific Business Center
+21884,13135,13135,Georgia,Gwinnett County,Georgia,Gwinnett County,235104,Carter-Pacific Business Center
+21886,13135,13139,Georgia,Hall County,Georgia,Gwinnett County,10139,Carter-Pacific Business Center
+21891,13135,13157,Georgia,Jackson County,Georgia,Gwinnett County,3789,Carter-Pacific Business Center
+21924,13135,13297,Georgia,Walton County,Georgia,Gwinnett County,8307,Carter-Pacific Business Center
+89568,39061,18029,Indiana,Dearborn County,Ohio,Hamilton County,8047,Center Hill Business Park
+89600,39061,21015,Kentucky,Boone County,Ohio,Hamilton County,10386,Center Hill Business Park
+89604,39061,21037,Kentucky,Campbell County,Ohio,Hamilton County,14899,Center Hill Business Park
+89618,39061,21117,Kentucky,Kenton County,Ohio,Hamilton County,18746,Center Hill Business Park
+89698,39061,39017,Ohio,Butler County,Ohio,Hamilton County,48733,Center Hill Business Park
+89701,39061,39025,Ohio,Clermont County,Ohio,Hamilton County,38856,Center Hill Business Park
+89713,39061,39061,Ohio,Hamilton County,Ohio,Hamilton County,304920,Center Hill Business Park
+89749,39061,39165,Ohio,Warren County,Ohio,Hamilton County,27975,Center Hill Business Park
+89568,39061,18029,Indiana,Dearborn County,Ohio,Hamilton County,8047,Center Hill Research Facility
+89600,39061,21015,Kentucky,Boone County,Ohio,Hamilton County,10386,Center Hill Research Facility
+89604,39061,21037,Kentucky,Campbell County,Ohio,Hamilton County,14899,Center Hill Research Facility
+89618,39061,21117,Kentucky,Kenton County,Ohio,Hamilton County,18746,Center Hill Research Facility
+89698,39061,39017,Ohio,Butler County,Ohio,Hamilton County,48733,Center Hill Research Facility
+89701,39061,39025,Ohio,Clermont County,Ohio,Hamilton County,38856,Center Hill Research Facility
+89713,39061,39061,Ohio,Hamilton County,Ohio,Hamilton County,304920,Center Hill Research Facility
+89749,39061,39165,Ohio,Warren County,Ohio,Hamilton County,27975,Center Hill Research Facility
+96245,41041,41041,Oregon,Lincoln County,Oregon,Lincoln County,17882,Coastal Ecology Branch
+14053,11001,11001,District of Columbia,District of Columbia,District of Columbia,District of Columbia,252256,Connecting Wing
+14139,11001,24003,Maryland,Anne Arundel County,District of Columbia,District of Columbia,18474,Connecting Wing
+14145,11001,24017,Maryland,Charles County,District of Columbia,District of Columbia,15719,Connecting Wing
+14150,11001,24027,Maryland,Howard County,District of Columbia,District of Columbia,9226,Connecting Wing
+14152,11001,24031,Maryland,Montgomery County,District of Columbia,District of Columbia,111756,Connecting Wing
+14153,11001,24033,Maryland,Prince George's County,District of Columbia,District of Columbia,139856,Connecting Wing
+14414,11001,51013,Virginia,Arlington County,District of Columbia,District of Columbia,49463,Connecting Wing
+14425,11001,51059,Virginia,Fairfax County,District of Columbia,District of Columbia,96224,Connecting Wing
+14437,11001,51107,Virginia,Loudoun County,District of Columbia,District of Columbia,10600,Connecting Wing
+14451,11001,51153,Virginia,Prince William County,District of Columbia,District of Columbia,22904,Connecting Wing
+14464,11001,51510,Virginia,Alexandria city,District of Columbia,District of Columbia,27707,Connecting Wing
+25355,16055,16017,Idaho,Bonner County,Idaho,Kootenai County,1227,Couer D' Alene Office
+25358,16055,16055,Idaho,Kootenai County,Idaho,Kootenai County,50193,Couer D' Alene Office
+25377,16055,53063,Washington,Spokane County,Idaho,Kootenai County,3856,Couer D' Alene Office
+49949,24021,24013,Maryland,Carroll County,Maryland,Frederick County,3102,DUSWM Administration Building
+49952,24021,24021,Maryland,Frederick County,Maryland,Frederick County,71718,DUSWM Administration Building
+49956,24021,24031,Maryland,Montgomery County,Maryland,Frederick County,5972,DUSWM Administration Building
+49961,24021,24043,Maryland,Washington County,Maryland,Frederick County,9047,DUSWM Administration Building
+49981,24021,42001,Pennsylvania,Adams County,Maryland,Frederick County,2668,DUSWM Administration Building
+49992,24021,42055,Pennsylvania,Franklin County,Maryland,Frederick County,2104,DUSWM Administration Building
+50030,24021,54003,West Virginia,Berkeley County,Maryland,Frederick County,1255,DUSWM Administration Building
+50032,24021,54037,West Virginia,Jefferson County,Maryland,Frederick County,1829,DUSWM Administration Building
+11996,8059,8001,Colorado,Adams County,Colorado,Jefferson County,24452,Denver Federal Center
+11997,8059,8005,Colorado,Arapahoe County,Colorado,Jefferson County,14427,Denver Federal Center
+11999,8059,8013,Colorado,Boulder County,Colorado,Jefferson County,4655,Denver Federal Center
+12000,8059,8014,Colorado,Broomfield County,Colorado,Jefferson County,3374,Denver Federal Center
+12005,8059,8031,Colorado,Denver County,Colorado,Jefferson County,29746,Denver Federal Center
+12006,8059,8035,Colorado,Douglas County,Colorado,Jefferson County,10061,Denver Federal Center
+12015,8059,8059,Colorado,Jefferson County,Colorado,Jefferson County,140832,Denver Federal Center
+14053,11001,11001,District of Columbia,District of Columbia,District of Columbia,District of Columbia,252256,EPA East
+14139,11001,24003,Maryland,Anne Arundel County,District of Columbia,District of Columbia,18474,EPA East
+14145,11001,24017,Maryland,Charles County,District of Columbia,District of Columbia,15719,EPA East
+14150,11001,24027,Maryland,Howard County,District of Columbia,District of Columbia,9226,EPA East
+14152,11001,24031,Maryland,Montgomery County,District of Columbia,District of Columbia,111756,EPA East
+14153,11001,24033,Maryland,Prince George's County,District of Columbia,District of Columbia,139856,EPA East
+14414,11001,51013,Virginia,Arlington County,District of Columbia,District of Columbia,49463,EPA East
+14425,11001,51059,Virginia,Fairfax County,District of Columbia,District of Columbia,96224,EPA East
+14437,11001,51107,Virginia,Loudoun County,District of Columbia,District of Columbia,10600,EPA East
+14451,11001,51153,Virginia,Prince William County,District of Columbia,District of Columbia,22904,EPA East
+14464,11001,51510,Virginia,Alexandria city,District of Columbia,District of Columbia,27707,EPA East
+14053,11001,11001,District of Columbia,District of Columbia,District of Columbia,District of Columbia,252256,EPA West
+14139,11001,24003,Maryland,Anne Arundel County,District of Columbia,District of Columbia,18474,EPA West
+14145,11001,24017,Maryland,Charles County,District of Columbia,District of Columbia,15719,EPA West
+14150,11001,24027,Maryland,Howard County,District of Columbia,District of Columbia,9226,EPA West
+14152,11001,24031,Maryland,Montgomery County,District of Columbia,District of Columbia,111756,EPA West
+14153,11001,24033,Maryland,Prince George's County,District of Columbia,District of Columbia,139856,EPA West
+14414,11001,51013,Virginia,Arlington County,District of Columbia,District of Columbia,49463,EPA West
+14425,11001,51059,Virginia,Fairfax County,District of Columbia,District of Columbia,96224,EPA West
+14437,11001,51107,Virginia,Loudoun County,District of Columbia,District of Columbia,10600,EPA West
+14451,11001,51153,Virginia,Prince William County,District of Columbia,District of Columbia,22904,EPA West
+14464,11001,51510,Virginia,Alexandria city,District of Columbia,District of Columbia,27707,EPA West
+2465,2020,2020,Alaska,Anchorage Municipality,Alaska,Anchorage Municipality,151009,ERU Warehouse - Lot 4B Silverado Subdivision
+2475,2020,2170,Alaska,Matanuska-Susitna Borough,Alaska,Anchorage Municipality,11787,ERU Warehouse - Lot 4B Silverado Subdivision
+19444,13059,13013,Georgia,Barrow County,Georgia,Clarke County,2207,Ecosystem Processes Division
+19449,13059,13059,Georgia,Clarke County,Georgia,Clarke County,41469,Ecosystem Processes Division
+19460,13059,13135,Georgia,Gwinnett County,Georgia,Clarke County,1849,Ecosystem Processes Division
+19467,13059,13157,Georgia,Jackson County,Georgia,Clarke County,3481,Ecosystem Processes Division
+19472,13059,13195,Georgia,Madison County,Georgia,Clarke County,5159,Ecosystem Processes Division
+19476,13059,13219,Georgia,Oconee County,Georgia,Clarke County,7711,Ecosystem Processes Division
+19477,13059,13221,Georgia,Oglethorpe County,Georgia,Clarke County,3015,Ecosystem Processes Division
+19486,13059,13297,Georgia,Walton County,Georgia,Clarke County,1405,Ecosystem Processes Division
+107978,47113,47017,Tennessee,Carroll County,Tennessee,Madison County,1393,Ed Jones Federal Building & Courthouse
+107979,47113,47023,Tennessee,Chester County,Tennessee,Madison County,2357,Ed Jones Federal Building & Courthouse
+107980,47113,47033,Tennessee,Crockett County,Tennessee,Madison County,1785,Ed Jones Federal Building & Courthouse
+107986,47113,47053,Tennessee,Gibson County,Tennessee,Madison County,6133,Ed Jones Federal Building & Courthouse
+107987,47113,47069,Tennessee,Hardeman County,Tennessee,Madison County,1003,Ed Jones Federal Building & Courthouse
+107990,47113,47075,Tennessee,Haywood County,Tennessee,Madison County,1300,Ed Jones Federal Building & Courthouse
+107991,47113,47077,Tennessee,Henderson County,Tennessee,Madison County,2662,Ed Jones Federal Building & Courthouse
+107998,47113,47109,Tennessee,McNairy County,Tennessee,Madison County,868,Ed Jones Federal Building & Courthouse
+107999,47113,47113,Tennessee,Madison County,Tennessee,Madison County,37160,Ed Jones Federal Building & Courthouse
+73712,34023,34003,New Jersey,Bergen County,New Jersey,Middlesex County,4561,Edison Laboratory
+73713,34023,34005,New Jersey,Burlington County,New Jersey,Middlesex County,4456,Edison Laboratory
+73717,34023,34013,New Jersey,Essex County,New Jersey,Middlesex County,8058,Edison Laboratory
+73719,34023,34017,New Jersey,Hudson County,New Jersey,Middlesex County,7066,Edison Laboratory
+73720,34023,34019,New Jersey,Hunterdon County,New Jersey,Middlesex County,3907,Edison Laboratory
+73721,34023,34021,New Jersey,Mercer County,New Jersey,Middlesex County,16549,Edison Laboratory
+73722,34023,34023,New Jersey,Middlesex County,New Jersey,Middlesex County,212651,Edison Laboratory
+73723,34023,34025,New Jersey,Monmouth County,New Jersey,Middlesex County,26869,Edison Laboratory
+73724,34023,34027,New Jersey,Morris County,New Jersey,Middlesex County,4049,Edison Laboratory
+73725,34023,34029,New Jersey,Ocean County,New Jersey,Middlesex County,10866,Edison Laboratory
+73728,34023,34035,New Jersey,Somerset County,New Jersey,Middlesex County,25142,Edison Laboratory
+73730,34023,34039,New Jersey,Union County,New Jersey,Middlesex County,28813,Edison Laboratory
+98817,42045,10003,Delaware,New Castle County,Pennsylvania,Delaware County,9547,"Emergency Operations, Conference & Training Center"
+98861,42045,34007,New Jersey,Camden County,Pennsylvania,Delaware County,2651,"Emergency Operations, Conference & Training Center"
+98864,42045,34015,New Jersey,Gloucester County,Pennsylvania,Delaware County,3515,"Emergency Operations, Conference & Training Center"
+98900,42045,42017,Pennsylvania,Bucks County,Pennsylvania,Delaware County,2612,"Emergency Operations, Conference & Training Center"
+98903,42045,42029,Pennsylvania,Chester County,Pennsylvania,Delaware County,19164,"Emergency Operations, Conference & Training Center"
+98909,42045,42045,Pennsylvania,Delaware County,Pennsylvania,Delaware County,137983,"Emergency Operations, Conference & Training Center"
+98921,42045,42091,Pennsylvania,Montgomery County,Pennsylvania,Delaware County,13175,"Emergency Operations, Conference & Training Center"
+98925,42045,42101,Pennsylvania,Philadelphia County,Pennsylvania,Delaware County,17676,"Emergency Operations, Conference & Training Center"
+60037,27123,27003,Minnesota,Anoka County,Minnesota,Ramsey County,30689,Emergency Relocation Site
+60048,27123,27025,Minnesota,Chisago County,Minnesota,Ramsey County,5300,Emergency Relocation Site
+60054,27123,27037,Minnesota,Dakota County,Minnesota,Ramsey County,27395,Emergency Relocation Site
+60062,27123,27053,Minnesota,Hennepin County,Minnesota,Ramsey County,52386,Emergency Relocation Site
+60092,27123,27123,Minnesota,Ramsey County,Minnesota,Ramsey County,143052,Emergency Relocation Site
+60109,27123,27163,Minnesota,Washington County,Minnesota,Ramsey County,40532,Emergency Relocation Site
+60191,27123,55109,Wisconsin,St. Croix County,Minnesota,Ramsey County,6344,Emergency Relocation Site
+43959,21117,18029,Indiana,Dearborn County,Kentucky,Kenton County,691,Emergency Response Team Facility
+43967,21117,21015,Kentucky,Boone County,Kentucky,Kenton County,10676,Emergency Response Team Facility
+43970,21117,21037,Kentucky,Campbell County,Kentucky,Kenton County,6550,Emergency Response Team Facility
+43977,21117,21081,Kentucky,Grant County,Kentucky,Kenton County,1284,Emergency Response Team Facility
+43979,21117,21117,Kentucky,Kenton County,Kentucky,Kenton County,30646,Emergency Response Team Facility
+43998,21117,39025,Ohio,Clermont County,Kentucky,Kenton County,2088,Emergency Response Team Facility
+44002,21117,39061,Ohio,Hamilton County,Kentucky,Kenton County,8191,Emergency Response Team Facility
+44010,21117,39165,Ohio,Warren County,Kentucky,Kenton County,671,Emergency Response Team Facility
+114792,48201,48039,Texas,Brazoria County,Texas,Harris County,58805,Environmental Laboratory
+114823,48201,48157,Texas,Fort Bend County,Texas,Harris County,181752,Environmental Laboratory
+114827,48201,48167,Texas,Galveston County,Texas,Harris County,50755,Environmental Laboratory
+114839,48201,48201,Texas,Harris County,Texas,Harris County,1886175,Environmental Laboratory
+114882,48201,48339,Texas,Montgomery County,Texas,Harris County,87418,Environmental Laboratory
+49342,24003,24003,Maryland,Anne Arundel County,Maryland,Anne Arundel County,168876,Environmental Science Center
+49343,24003,24005,Maryland,Baltimore County,Maryland,Anne Arundel County,24340,Environmental Science Center
+49344,24003,24009,Maryland,Calvert County,Maryland,Anne Arundel County,2992,Environmental Science Center
+49346,24003,24013,Maryland,Carroll County,Maryland,Anne Arundel County,5049,Environmental Science Center
+49352,24003,24025,Maryland,Harford County,Maryland,Anne Arundel County,3420,Environmental Science Center
+49353,24003,24027,Maryland,Howard County,Maryland,Anne Arundel County,17598,Environmental Science Center
+49355,24003,24031,Maryland,Montgomery County,Maryland,Anne Arundel County,5249,Environmental Science Center
+49356,24003,24033,Maryland,Prince George's County,Maryland,Anne Arundel County,16075,Environmental Science Center
+49357,24003,24035,Maryland,Queen Anne's County,Maryland,Anne Arundel County,5817,Environmental Science Center
+49363,24003,24510,Maryland,Baltimore city,Maryland,Anne Arundel County,17180,Environmental Science Center
+96213,41039,41039,Oregon,Lane County,Oregon,Lane County,148796,Eugene Office c/o Department of Environmental Quality
+96215,41039,41043,Oregon,Linn County,Oregon,Lane County,2490,Eugene Office c/o Department of Environmental Quality
+88660,39039,18003,Indiana,Allen County,Ohio,Defiance County,260,Experimental Stream Field Station
+88677,39039,39039,Ohio,Defiance County,Ohio,Defiance County,11245,Experimental Stream Field Station
+88678,39039,39051,Ohio,Fulton County,Ohio,Defiance County,305,Experimental Stream Field Station
+88680,39039,39069,Ohio,Henry County,Ohio,Defiance County,1047,Experimental Stream Field Station
+88682,39039,39125,Ohio,Paulding County,Ohio,Defiance County,1499,Experimental Stream Field Station
+88684,39039,39137,Ohio,Putnam County,Ohio,Defiance County,628,Experimental Stream Field Station
+88687,39039,39171,Ohio,Williams County,Ohio,Defiance County,760,Experimental Stream Field Station
+26257,17031,17031,Illinois,Cook County,Illinois,Cook County,2095117,Federal Building - South Clark Street
+26261,17031,17043,Illinois,DuPage County,Illinois,Cook County,138947,Federal Building - South Clark Street
+26280,17031,17089,Illinois,Kane County,Illinois,Cook County,44221,Federal Building - South Clark Street
+26284,17031,17097,Illinois,Lake County,Illinois,Cook County,77823,Federal Building - South Clark Street
+26290,17031,17111,Illinois,McHenry County,Illinois,Cook County,32627,Federal Building - South Clark Street
+26321,17031,17197,Illinois,Will County,Illinois,Cook County,89460,Federal Building - South Clark Street
+26348,17031,18089,Indiana,Lake County,Illinois,Cook County,42490,Federal Building - South Clark Street
+128758,53033,53033,Washington,King County,Washington,King County,977541,Federal Center South Warehouse
+128767,53033,53053,Washington,Pierce County,Washington,King County,90535,Federal Center South Warehouse
+128771,53033,53061,Washington,Snohomish County,Washington,King County,119853,Federal Center South Warehouse
+21667,13127,13025,Georgia,Brantley County,Georgia,Glynn County,1945,Federal Law Enforcement Training Center
+21670,13127,13039,Georgia,Camden County,Georgia,Glynn County,1936,Federal Law Enforcement Training Center
+21681,13127,13127,Georgia,Glynn County,Georgia,Glynn County,32462,Federal Law Enforcement Training Center
+21687,13127,13191,Georgia,McIntosh County,Georgia,Glynn County,1800,Federal Law Enforcement Training Center
+19444,13059,13013,Georgia,Barrow County,Georgia,Clarke County,2207,Field Research Annex
+19449,13059,13059,Georgia,Clarke County,Georgia,Clarke County,41469,Field Research Annex
+19460,13059,13135,Georgia,Gwinnett County,Georgia,Clarke County,1849,Field Research Annex
+19467,13059,13157,Georgia,Jackson County,Georgia,Clarke County,3481,Field Research Annex
+19472,13059,13195,Georgia,Madison County,Georgia,Clarke County,5159,Field Research Annex
+19476,13059,13219,Georgia,Oconee County,Georgia,Clarke County,7711,Field Research Annex
+19477,13059,13221,Georgia,Oglethorpe County,Georgia,Clarke County,3015,Field Research Annex
+19486,13059,13297,Georgia,Walton County,Georgia,Clarke County,1405,Field Research Annex
+53778,26049,26049,Michigan,Genesee County,Michigan,Genesee County,117459,Flint Project Office
+53792,26049,26087,Michigan,Lapeer County,Michigan,Genesee County,3872,Flint Project Office
+53795,26049,26093,Michigan,Livingston County,Michigan,Genesee County,3121,Flint Project Office
+53805,26049,26125,Michigan,Oakland County,Michigan,Genesee County,6440,Flint Project Office
+53812,26049,26145,Michigan,Saginaw County,Michigan,Genesee County,3042,Flint Project Office
+53816,26049,26155,Michigan,Shiawassee County,Michigan,Genesee County,3504,Flint Project Office
+53817,26049,26157,Michigan,Tuscola County,Michigan,Genesee County,2013,Flint Project Office
+100916,42101,10003,Delaware,New Castle County,Pennsylvania,Philadelphia County,8972,Four Penn Center
+101070,42101,34005,New Jersey,Burlington County,Pennsylvania,Philadelphia County,16884,Four Penn Center
+101071,42101,34007,New Jersey,Camden County,Pennsylvania,Philadelphia County,31757,Four Penn Center
+101075,42101,34015,New Jersey,Gloucester County,Pennsylvania,Philadelphia County,16169,Four Penn Center
+101171,42101,42017,Pennsylvania,Bucks County,Pennsylvania,Philadelphia County,34582,Four Penn Center
+101176,42101,42029,Pennsylvania,Chester County,Pennsylvania,Philadelphia County,12297,Four Penn Center
+101184,42101,42045,Pennsylvania,Delaware County,Pennsylvania,Philadelphia County,52493,Four Penn Center
+101205,42101,42091,Pennsylvania,Montgomery County,Pennsylvania,Philadelphia County,58910,Four Penn Center
+101210,42101,42101,Pennsylvania,Philadelphia County,Pennsylvania,Philadelphia County,473604,Four Penn Center
+96507,41051,41005,Oregon,Clackamas County,Oregon,Multnomah County,59193,Fox Tower
+96509,41051,41009,Oregon,Columbia County,Oregon,Multnomah County,5235,Fox Tower
+96526,41051,41051,Oregon,Multnomah County,Oregon,Multnomah County,301631,Fox Tower
+96534,41051,41067,Oregon,Washington County,Oregon,Multnomah County,56293,Fox Tower
+96561,41051,53011,Washington,Clark County,Oregon,Multnomah County,47184,Fox Tower
+114792,48201,48039,Texas,Brazoria County,Texas,Harris County,58805,GT Mickey Leland Federal Building
+114823,48201,48157,Texas,Fort Bend County,Texas,Harris County,181752,GT Mickey Leland Federal Building
+114827,48201,48167,Texas,Galveston County,Texas,Harris County,50755,GT Mickey Leland Federal Building
+114839,48201,48201,Texas,Harris County,Texas,Harris County,1886175,GT Mickey Leland Federal Building
+114882,48201,48339,Texas,Montgomery County,Texas,Harris County,87418,GT Mickey Leland Federal Building
+94967,40123,40027,Oklahoma,Cleveland County,Oklahoma,Pontotoc County,283,Gaar Corner
+94968,40123,40029,Oklahoma,Coal County,Oklahoma,Pontotoc County,351,Gaar Corner
+94970,40123,40049,Oklahoma,Garvin County,Oklahoma,Pontotoc County,353,Gaar Corner
+94972,40123,40063,Oklahoma,Hughes County,Oklahoma,Pontotoc County,316,Gaar Corner
+94983,40123,40099,Oklahoma,Murray County,Oklahoma,Pontotoc County,221,Gaar Corner
+94990,40123,40123,Oklahoma,Pontotoc County,Oklahoma,Pontotoc County,15654,Gaar Corner
+94991,40123,40125,Oklahoma,Pottawatomie County,Oklahoma,Pontotoc County,277,Gaar Corner
+94993,40123,40133,Oklahoma,Seminole County,Oklahoma,Pontotoc County,607,Gaar Corner
+81804,37063,37001,North Carolina,Alamance County,North Carolina,Durham County,4214,Grand Slam
+81814,37063,37037,North Carolina,Chatham County,North Carolina,Durham County,3125,Grand Slam
+81819,37063,37063,North Carolina,Durham County,North Carolina,Durham County,97552,Grand Slam
+81824,37063,37077,North Carolina,Granville County,North Carolina,Durham County,5741,Grand Slam
+81829,37063,37101,North Carolina,Johnston County,North Carolina,Durham County,2128,Grand Slam
+81838,37063,37135,North Carolina,Orange County,North Carolina,Durham County,18142,Grand Slam
+81842,37063,37145,North Carolina,Person County,North Carolina,Durham County,4359,Grand Slam
+81852,37063,37183,North Carolina,Wake County,North Carolina,Durham County,53082,Grand Slam
+60422,27137,27017,Minnesota,Carlton County,Minnesota,St. Louis County,4582,Great Lakes Toxicology & Ecology Division
+60437,27137,27061,Minnesota,Itasca County,Minnesota,St. Louis County,1958,Great Lakes Toxicology & Ecology Division
+60455,27137,27137,Minnesota,St. Louis County,Minnesota,St. Louis County,84613,Great Lakes Toxicology & Ecology Division
+60486,27137,55031,Wisconsin,Douglas County,Minnesota,St. Louis County,7257,Great Lakes Toxicology & Ecology Division
+15499,12033,1003,Alabama,Baldwin County,Florida,Escambia County,3193,Gulf Ecosystem Measurement & Modeling Division
+15525,12033,12033,Florida,Escambia County,Florida,Escambia County,124398,Gulf Ecosystem Measurement & Modeling Division
+15537,12033,12113,Florida,Santa Rosa County,Florida,Escambia County,22052,Gulf Ecosystem Measurement & Modeling Division
+61938,28047,28045,Mississippi,Hancock County,Mississippi,Harrison County,4307,Gulf of Mexico Program Office
+61939,28047,28047,Mississippi,Harrison County,Mississippi,Harrison County,74626,Gulf of Mexico Program Office
+61941,28047,28059,Mississippi,Jackson County,Mississippi,Harrison County,14204,Gulf of Mexico Program Office
+61955,28047,28131,Mississippi,Stone County,Mississippi,Harrison County,1867,Gulf of Mexico Program Office
+128103,53005,41059,Oregon,Umatilla County,Washington,Benton County,838,Hanford Project Office - Jadwin Ave
+128118,53005,53005,Washington,Benton County,Washington,Benton County,64097,Hanford Project Office - Jadwin Ave
+128122,53005,53021,Washington,Franklin County,Washington,Benton County,13189,Hanford Project Office - Jadwin Ave
+128137,53005,53071,Washington,Walla Walla County,Washington,Benton County,838,Hanford Project Office - Jadwin Ave
+128140,53005,53077,Washington,Yakima County,Washington,Benton County,3325,Hanford Project Office - Jadwin Ave
+83776,37135,37001,North Carolina,Alamance County,North Carolina,Orange County,6248,Human Studies Facility
+83785,37135,37037,North Carolina,Chatham County,North Carolina,Orange County,4918,Human Studies Facility
+83790,37135,37063,North Carolina,Durham County,North Carolina,Orange County,14417,Human Studies Facility
+83796,37135,37081,North Carolina,Guilford County,North Carolina,Orange County,806,Human Studies Facility
+83806,37135,37135,North Carolina,Orange County,North Carolina,Orange County,39013,Human Studies Facility
+83820,37135,37183,North Carolina,Wake County,North Carolina,Orange County,6582,Human Studies Facility
+88433,39035,39035,Ohio,Cuyahoga County,Ohio,Cuyahoga County,502300,Islander Park 1 Building
+88439,39035,39055,Ohio,Geauga County,Ohio,Cuyahoga County,16920,Islander Park 1 Building
+88451,39035,39085,Ohio,Lake County,Ohio,Cuyahoga County,38430,Islander Park 1 Building
+88453,39035,39093,Ohio,Lorain County,Ohio,Cuyahoga County,43600,Islander Park 1 Building
+88457,39035,39103,Ohio,Medina County,Ohio,Cuyahoga County,27647,Islander Park 1 Building
+88465,39035,39133,Ohio,Portage County,Ohio,Cuyahoga County,11872,Islander Park 1 Building
+88472,39035,39153,Ohio,Summit County,Ohio,Cuyahoga County,35941,Islander Park 1 Building
+41673,20209,20045,Kansas,Douglas County,Kansas,Wyandotte County,1029,Kansas City Science & Technology Center
+41678,20209,20091,Kansas,Johnson County,Kansas,Wyandotte County,20222,Kansas City Science & Technology Center
+41679,20209,20103,Kansas,Leavenworth County,Kansas,Wyandotte County,4863,Kansas City Science & Technology Center
+41689,20209,20209,Kansas,Wyandotte County,Kansas,Wyandotte County,32266,Kansas City Science & Technology Center
+41711,20209,29037,Missouri,Cass County,Kansas,Wyandotte County,1082,Kansas City Science & Technology Center
+41713,20209,29047,Missouri,Clay County,Kansas,Wyandotte County,5975,Kansas City Science & Technology Center
+41724,20209,29095,Missouri,Jackson County,Kansas,Wyandotte County,11231,Kansas City Science & Technology Center
+41738,20209,29165,Missouri,Platte County,Kansas,Wyandotte County,3417,Kansas City Science & Technology Center
+89568,39061,18029,Indiana,Dearborn County,Ohio,Hamilton County,8047,Kenwood Warehouse
+89600,39061,21015,Kentucky,Boone County,Ohio,Hamilton County,10386,Kenwood Warehouse
+89604,39061,21037,Kentucky,Campbell County,Ohio,Hamilton County,14899,Kenwood Warehouse
+89618,39061,21117,Kentucky,Kenton County,Ohio,Hamilton County,18746,Kenwood Warehouse
+89698,39061,39017,Ohio,Butler County,Ohio,Hamilton County,48733,Kenwood Warehouse
+89701,39061,39025,Ohio,Clermont County,Ohio,Hamilton County,38856,Kenwood Warehouse
+89713,39061,39061,Ohio,Hamilton County,Ohio,Hamilton County,304920,Kenwood Warehouse
+89749,39061,39165,Ohio,Warren County,Ohio,Hamilton County,27975,Kenwood Warehouse
+107712,47093,47001,Tennessee,Anderson County,Tennessee,Knox County,8270,Knoxville Resident Office
+107714,47093,47009,Tennessee,Blount County,Tennessee,Knox County,14945,Knoxville Resident Office
+107733,47093,47089,Tennessee,Jefferson County,Tennessee,Knox County,4602,Knoxville Resident Office
+107734,47093,47093,Tennessee,Knox County,Tennessee,Knox County,177579,Knoxville Resident Office
+107738,47093,47105,Tennessee,Loudon County,Tennessee,Knox County,6143,Knoxville Resident Office
+107748,47093,47145,Tennessee,Roane County,Tennessee,Knox County,3243,Knoxville Resident Office
+107751,47093,47155,Tennessee,Sevier County,Tennessee,Knox County,7546,Knoxville Resident Office
+107756,47093,47173,Tennessee,Union County,Tennessee,Knox County,3411,Knoxville Resident Office
+71296,32003,32003,Nevada,Clark County,Nevada,Clark County,896293,La Plaza Building Complex
+7333,6037,6037,California,Los Angeles County,California,Los Angeles County,4181968,Los Angeles Field Office
+7343,6037,6059,California,Orange County,California,Los Angeles County,185058,Los Angeles Field Office
+7346,6037,6065,California,Riverside County,California,Los Angeles County,51975,Los Angeles Field Office
+7349,6037,6071,California,San Bernardino County,California,Los Angeles County,135859,Los Angeles Field Office
+7366,6037,6111,California,Ventura County,California,Los Angeles County,68295,Los Angeles Field Office
+128824,53035,53033,Washington,King County,Washington,Kitsap County,1507,Manchester Regional Lab
+128825,53035,53035,Washington,Kitsap County,Washington,Kitsap County,95235,Manchester Regional Lab
+128828,53035,53045,Washington,Mason County,Washington,Kitsap County,3036,Manchester Regional Lab
+128829,53035,53053,Washington,Pierce County,Washington,Kitsap County,4620,Manchester Regional Lab
+33239,18097,18011,Indiana,Boone County,Indiana,Marion County,11115,Market Tower
+33261,18097,18057,Indiana,Hamilton County,Indiana,Marion County,61624,Market Tower
+33262,18097,18059,Indiana,Hancock County,Indiana,Marion County,15331,Market Tower
+33264,18097,18063,Indiana,Hendricks County,Indiana,Marion County,36137,Market Tower
+33273,18097,18081,Indiana,Johnson County,Indiana,Marion County,29933,Market Tower
+33279,18097,18095,Indiana,Madison County,Indiana,Marion County,6647,Market Tower
+33280,18097,18097,Indiana,Marion County,Indiana,Marion County,349222,Market Tower
+33286,18097,18109,Indiana,Morgan County,Indiana,Marion County,11052,Market Tower
+68301,30063,30047,Montana,Lake County,Montana,Missoula County,650,Missoula Resident Office FB-PO-CH
+68306,30063,30063,Montana,Missoula County,Montana,Missoula County,54962,Missoula Resident Office FB-PO-CH
+68310,30063,30081,Montana,Ravalli County,Montana,Missoula County,3541,Missoula Resident Office FB-PO-CH
+124221,51107,24021,Maryland,Frederick County,Virginia,Loudoun County,1765,Mt. Weather COOP Facility
+124224,51107,24031,Maryland,Montgomery County,Virginia,Loudoun County,1853,Mt. Weather COOP Facility
+124225,51107,24033,Maryland,Prince George's County,Virginia,Loudoun County,1709,Mt. Weather COOP Facility
+124320,51107,51043,Virginia,Clarke County,Virginia,Loudoun County,2018,Mt. Weather COOP Facility
+124322,51107,51059,Virginia,Fairfax County,Virginia,Loudoun County,24818,Mt. Weather COOP Facility
+124323,51107,51061,Virginia,Fauquier County,Virginia,Loudoun County,1868,Mt. Weather COOP Facility
+124324,51107,51069,Virginia,Frederick County,Virginia,Loudoun County,3549,Mt. Weather COOP Facility
+124330,51107,51107,Virginia,Loudoun County,Virginia,Loudoun County,88958,Mt. Weather COOP Facility
+124338,51107,51153,Virginia,Prince William County,Virginia,Loudoun County,8087,Mt. Weather COOP Facility
+124361,51107,54003,West Virginia,Berkeley County,Virginia,Loudoun County,1601,Mt. Weather COOP Facility
+124365,51107,54037,West Virginia,Jefferson County,Virginia,Loudoun County,4282,Mt. Weather COOP Facility
+1761,1101,1001,Alabama,Autauga County,Alabama,Montgomery County,11306,National Air & Radiation Environmental Laboratory
+1769,1101,1021,Alabama,Chilton County,Alabama,Montgomery County,1403,National Air & Radiation Environmental Laboratory
+1784,1101,1051,Alabama,Elmore County,Alabama,Montgomery County,17649,National Air & Radiation Environmental Laboratory
+1791,1101,1081,Alabama,Lee County,Alabama,Montgomery County,1596,National Air & Radiation Environmental Laboratory
+1793,1101,1085,Alabama,Lowndes County,Alabama,Montgomery County,1551,National Air & Radiation Environmental Laboratory
+1800,1101,1101,Alabama,Montgomery County,Alabama,Montgomery County,90562,National Air & Radiation Environmental Laboratory
+56432,26161,26075,Michigan,Jackson County,Michigan,Washtenaw County,7281,National Vehicle Fuel & Emissions Laboratory
+56439,26161,26091,Michigan,Lenawee County,Michigan,Washtenaw County,7094,National Vehicle Fuel & Emissions Laboratory
+56440,26161,26093,Michigan,Livingston County,Michigan,Washtenaw County,12477,National Vehicle Fuel & Emissions Laboratory
+56448,26161,26115,Michigan,Monroe County,Michigan,Washtenaw County,4711,National Vehicle Fuel & Emissions Laboratory
+56451,26161,26125,Michigan,Oakland County,Michigan,Washtenaw County,8636,National Vehicle Fuel & Emissions Laboratory
+56464,26161,26161,Michigan,Washtenaw County,Michigan,Washtenaw County,134205,National Vehicle Fuel & Emissions Laboratory
+56465,26161,26163,Michigan,Wayne County,Michigan,Washtenaw County,27144,National Vehicle Fuel & Emissions Laboratory
+56432,26161,26075,Michigan,Jackson County,Michigan,Washtenaw County,7281,National Vehicle Fuel & Emissions Laboratory Office Building
+56439,26161,26091,Michigan,Lenawee County,Michigan,Washtenaw County,7094,National Vehicle Fuel & Emissions Laboratory Office Building
+56440,26161,26093,Michigan,Livingston County,Michigan,Washtenaw County,12477,National Vehicle Fuel & Emissions Laboratory Office Building
+56448,26161,26115,Michigan,Monroe County,Michigan,Washtenaw County,4711,National Vehicle Fuel & Emissions Laboratory Office Building
+56451,26161,26125,Michigan,Oakland County,Michigan,Washtenaw County,8636,National Vehicle Fuel & Emissions Laboratory Office Building
+56464,26161,26161,Michigan,Washtenaw County,Michigan,Washtenaw County,134205,National Vehicle Fuel & Emissions Laboratory Office Building
+56465,26161,26163,Michigan,Wayne County,Michigan,Washtenaw County,27144,National Vehicle Fuel & Emissions Laboratory Office Building
+52022,25017,25009,Massachusetts,Essex County,Massachusetts,Middlesex County,66930,New England Regional Laboratory
+52026,25017,25017,Massachusetts,Middlesex County,Massachusetts,Middlesex County,547589,New England Regional Laboratory
+52028,25017,25021,Massachusetts,Norfolk County,Massachusetts,Middlesex County,53182,New England Regional Laboratory
+52029,25017,25023,Massachusetts,Plymouth County,Massachusetts,Middlesex County,10427,New England Regional Laboratory
+52030,25017,25025,Massachusetts,Suffolk County,Massachusetts,Middlesex County,70770,New England Regional Laboratory
+52031,25017,25027,Massachusetts,Worcester County,Massachusetts,Middlesex County,67242,New England Regional Laboratory
+52061,25017,33011,New Hampshire,Hillsborough County,Massachusetts,Middlesex County,25413,New England Regional Laboratory
+52063,25017,33015,New Hampshire,Rockingham County,Massachusetts,Middlesex County,13791,New England Regional Laboratory
+73712,34023,34003,New Jersey,Bergen County,New Jersey,Middlesex County,4561,OLEM - REAC Trailer Complex
+73713,34023,34005,New Jersey,Burlington County,New Jersey,Middlesex County,4456,OLEM - REAC Trailer Complex
+73717,34023,34013,New Jersey,Essex County,New Jersey,Middlesex County,8058,OLEM - REAC Trailer Complex
+73719,34023,34017,New Jersey,Hudson County,New Jersey,Middlesex County,7066,OLEM - REAC Trailer Complex
+73720,34023,34019,New Jersey,Hunterdon County,New Jersey,Middlesex County,3907,OLEM - REAC Trailer Complex
+73721,34023,34021,New Jersey,Mercer County,New Jersey,Middlesex County,16549,OLEM - REAC Trailer Complex
+73722,34023,34023,New Jersey,Middlesex County,New Jersey,Middlesex County,212651,OLEM - REAC Trailer Complex
+73723,34023,34025,New Jersey,Monmouth County,New Jersey,Middlesex County,26869,OLEM - REAC Trailer Complex
+73724,34023,34027,New Jersey,Morris County,New Jersey,Middlesex County,4049,OLEM - REAC Trailer Complex
+73725,34023,34029,New Jersey,Ocean County,New Jersey,Middlesex County,10866,OLEM - REAC Trailer Complex
+73728,34023,34035,New Jersey,Somerset County,New Jersey,Middlesex County,25142,OLEM - REAC Trailer Complex
+73730,34023,34039,New Jersey,Union County,New Jersey,Middlesex County,28813,OLEM - REAC Trailer Complex
+125920,51510,11001,District of Columbia,District of Columbia,Virginia,Alexandria city,6054,One Potomac Yard
+125946,51510,24017,Maryland,Charles County,Virginia,Alexandria city,1813,One Potomac Yard
+125951,51510,24031,Maryland,Montgomery County,Virginia,Alexandria city,3306,One Potomac Yard
+125952,51510,24033,Maryland,Prince George's County,Virginia,Alexandria city,8324,One Potomac Yard
+126006,51510,51013,Virginia,Arlington County,Virginia,Alexandria city,5614,One Potomac Yard
+126013,51510,51059,Virginia,Fairfax County,Virginia,Alexandria city,31221,One Potomac Yard
+126022,51510,51107,Virginia,Loudoun County,Virginia,Alexandria city,1327,One Potomac Yard
+126029,51510,51153,Virginia,Prince William County,Virginia,Alexandria city,7740,One Potomac Yard
+126034,51510,51179,Virginia,Stafford County,Virginia,Alexandria city,1415,One Potomac Yard
+126036,51510,51510,Virginia,Alexandria city,Virginia,Alexandria city,25007,One Potomac Yard
+95772,41003,41003,Oregon,Benton County,Oregon,Benton County,30157,Pacific Ecological Systems Division
+95777,41003,41039,Oregon,Lane County,Oregon,Benton County,805,Pacific Ecological Systems Division
+95779,41003,41043,Oregon,Linn County,Oregon,Benton County,6710,Pacific Ecological Systems Division
+95780,41003,41047,Oregon,Marion County,Oregon,Benton County,830,Pacific Ecological Systems Division
+95782,41003,41053,Oregon,Polk County,Oregon,Benton County,921,Pacific Ecological Systems Division
+128758,53033,53033,Washington,King County,Washington,King County,977541,Park Place Building
+128767,53033,53053,Washington,Pierce County,Washington,King County,90535,Park Place Building
+128771,53033,53061,Washington,Snohomish County,Washington,King County,119853,Park Place Building
+96507,41051,41005,Oregon,Clackamas County,Oregon,Multnomah County,59193,Parkrose Business Center
+96509,41051,41009,Oregon,Columbia County,Oregon,Multnomah County,5235,Parkrose Business Center
+96526,41051,41051,Oregon,Multnomah County,Oregon,Multnomah County,301631,Parkrose Business Center
+96534,41051,41067,Oregon,Washington County,Oregon,Multnomah County,56293,Parkrose Business Center
+96561,41051,53011,Washington,Clark County,Oregon,Multnomah County,47184,Parkrose Business Center
+113043,48141,35013,New Mexico,Doña Ana County,Texas,El Paso County,13314,Pioneer Building
+113081,48141,48141,Texas,El Paso County,Texas,El Paso County,319585,Pioneer Building
+24697,15003,15003,Hawaii,Honolulu County,Hawaii,Honolulu County,481687,Prince Kuhio Federal Office Building
+15273,12031,12019,Florida,Clay County,Florida,Duval County,40868,Prudential Building
+15276,12031,12031,Florida,Duval County,Florida,Duval County,382414,Prudential Building
+15295,12031,12089,Florida,Nassau County,Florida,Duval County,12240,Prudential Building
+15304,12031,12109,Florida,St. Johns County,Florida,Duval County,36177,Prudential Building
+26257,17031,17031,Illinois,Cook County,Illinois,Cook County,2095117,Ralph H. Metcalfe Federal Building
+26261,17031,17043,Illinois,DuPage County,Illinois,Cook County,138947,Ralph H. Metcalfe Federal Building
+26280,17031,17089,Illinois,Kane County,Illinois,Cook County,44221,Ralph H. Metcalfe Federal Building
+26284,17031,17097,Illinois,Lake County,Illinois,Cook County,77823,Ralph H. Metcalfe Federal Building
+26290,17031,17111,Illinois,McHenry County,Illinois,Cook County,32627,Ralph H. Metcalfe Federal Building
+26321,17031,17197,Illinois,Will County,Illinois,Cook County,89460,Ralph H. Metcalfe Federal Building
+26348,17031,18089,Indiana,Lake County,Illinois,Cook County,42490,Ralph H. Metcalfe Federal Building
+9262,6075,6001,California,Alameda County,California,San Francisco County,92246,Rapid Response Center Warehouse - San Francisco
+9267,6075,6013,California,Contra Costa County,California,San Francisco County,58089,Rapid Response Center Warehouse - San Francisco
+9278,6075,6041,California,Marin County,California,San Francisco County,27614,Rapid Response Center Warehouse - San Francisco
+9293,6075,6075,California,San Francisco County,California,San Francisco County,353484,Rapid Response Center Warehouse - San Francisco
+9296,6075,6081,California,San Mateo County,California,San Francisco County,81943,Rapid Response Center Warehouse - San Francisco
+9298,6075,6085,California,Santa Clara County,California,San Francisco County,14241,Rapid Response Center Warehouse - San Francisco
+9302,6075,6095,California,Solano County,California,San Francisco County,8974,Rapid Response Center Warehouse - San Francisco
+9303,6075,6097,California,Sonoma County,California,San Francisco County,6811,Rapid Response Center Warehouse - San Francisco
+16281,12073,12039,Florida,Gadsden County,Florida,Leon County,8402,Region 4 TALLAHASSEE Office
+16289,12073,12065,Florida,Jefferson County,Florida,Leon County,2639,Region 4 TALLAHASSEE Office
+16293,12073,12073,Florida,Leon County,Florida,Leon County,130378,Region 4 TALLAHASSEE Office
+16315,12073,12129,Florida,Wakulla County,Florida,Leon County,7673,Region 4 TALLAHASSEE Office
+26257,17031,17031,Illinois,Cook County,Illinois,Cook County,2095117,Region 5 Emergency Response Center
+26261,17031,17043,Illinois,DuPage County,Illinois,Cook County,138947,Region 5 Emergency Response Center
+26280,17031,17089,Illinois,Kane County,Illinois,Cook County,44221,Region 5 Emergency Response Center
+26284,17031,17097,Illinois,Lake County,Illinois,Cook County,77823,Region 5 Emergency Response Center
+26290,17031,17111,Illinois,McHenry County,Illinois,Cook County,32627,Region 5 Emergency Response Center
+26321,17031,17197,Illinois,Will County,Illinois,Cook County,89460,Region 5 Emergency Response Center
+26348,17031,18089,Indiana,Lake County,Illinois,Cook County,42490,Region 5 Emergency Response Center
+95440,40143,40037,Oklahoma,Creek County,Oklahoma,Tulsa County,14526,Region 6 Tulsa
+95467,40143,40111,Oklahoma,Okmulgee County,Oklahoma,Tulsa County,3716,Region 6 Tulsa
+95468,40143,40113,Oklahoma,Osage County,Oklahoma,Tulsa County,8425,Region 6 Tulsa
+95477,40143,40131,Oklahoma,Rogers County,Oklahoma,Tulsa County,20464,Region 6 Tulsa
+95482,40143,40143,Oklahoma,Tulsa County,Oklahoma,Tulsa County,273929,Region 6 Tulsa
+95483,40143,40145,Oklahoma,Wagoner County,Oklahoma,Tulsa County,21524,Region 6 Tulsa
+112198,48113,48085,Texas,Collin County,Texas,Dallas County,152920,Region 6 Warehouse
+112204,48113,48113,Texas,Dallas County,Texas,Dallas County,972082,Region 6 Warehouse
+112206,48113,48121,Texas,Denton County,Texas,Dallas County,110780,Region 6 Warehouse
+112211,48113,48139,Texas,Ellis County,Texas,Dallas County,24757,Region 6 Warehouse
+112245,48113,48257,Texas,Kaufman County,Texas,Dallas County,21602,Region 6 Warehouse
+112283,48113,48397,Texas,Rockwall County,Texas,Dallas County,18161,Region 6 Warehouse
+112293,48113,48439,Texas,Tarrant County,Texas,Dallas County,144079,Region 6 Warehouse
+39945,20091,20045,Kansas,Douglas County,Kansas,Johnson County,5551,Region 7 Headquarters
+39951,20091,20091,Kansas,Johnson County,Kansas,Johnson County,207513,Region 7 Headquarters
+39954,20091,20103,Kansas,Leavenworth County,Kansas,Johnson County,3741,Region 7 Headquarters
+39959,20091,20121,Kansas,Miami County,Kansas,Johnson County,7277,Region 7 Headquarters
+39977,20091,20209,Kansas,Wyandotte County,Kansas,Johnson County,19891,Region 7 Headquarters
+40007,20091,29037,Missouri,Cass County,Kansas,Johnson County,8364,Region 7 Headquarters
+40009,20091,29047,Missouri,Clay County,Kansas,Johnson County,7327,Region 7 Headquarters
+40023,20091,29095,Missouri,Jackson County,Kansas,Johnson County,42539,Region 7 Headquarters
+40036,20091,29165,Missouri,Platte County,Kansas,Johnson County,4213,Region 7 Headquarters
+65565,29099,29071,Missouri,Franklin County,Missouri,Jefferson County,880,Region 7 Superfund Warehouse
+65569,29099,29099,Missouri,Jefferson County,Missouri,Jefferson County,38000,Region 7 Superfund Warehouse
+65580,29099,29186,Missouri,Ste. Genevieve County,Missouri,Jefferson County,612,Region 7 Superfund Warehouse
+65581,29099,29187,Missouri,St. Francois County,Missouri,Jefferson County,1049,Region 7 Superfund Warehouse
+65582,29099,29189,Missouri,St. Louis County,Missouri,Jefferson County,6440,Region 7 Superfund Warehouse
+65586,29099,29221,Missouri,Washington County,Missouri,Jefferson County,852,Region 7 Superfund Warehouse
+65588,29099,29510,Missouri,St. Louis city,Missouri,Jefferson County,1096,Region 7 Superfund Warehouse
+64419,29047,20091,Kansas,Johnson County,Missouri,Clay County,4975,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64427,29047,20209,Kansas,Wyandotte County,Missouri,Clay County,2073,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64448,29047,29047,Missouri,Clay County,Missouri,Clay County,55022,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64449,29047,29049,Missouri,Clinton County,Missouri,Clay County,2091,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64460,29047,29095,Missouri,Jackson County,Missouri,Clay County,14695,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64475,29047,29165,Missouri,Platte County,Missouri,Clay County,7392,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+64476,29047,29177,Missouri,Ray County,Missouri,Clay County,3503,"Region 7 Warehouse, Hunt Midwest, Subtrop Building 81C"
+11528,8035,8001,Colorado,Adams County,Colorado,Douglas County,2942,Region 8 Castle Rock Warehouse
+11529,8035,8005,Colorado,Arapahoe County,Colorado,Douglas County,20665,Region 8 Castle Rock Warehouse
+11534,8035,8031,Colorado,Denver County,Colorado,Douglas County,10518,Region 8 Castle Rock Warehouse
+11535,8035,8035,Colorado,Douglas County,Colorado,Douglas County,67951,Region 8 Castle Rock Warehouse
+11536,8035,8039,Colorado,Elbert County,Colorado,Douglas County,2331,Region 8 Castle Rock Warehouse
+11537,8035,8041,Colorado,El Paso County,Colorado,Douglas County,1796,Region 8 Castle Rock Warehouse
+11541,8035,8059,Colorado,Jefferson County,Colorado,Douglas County,8064,Region 8 Castle Rock Warehouse
+11254,8031,8001,Colorado,Adams County,Colorado,Denver County,58697,Region 8 Headquarters (16th and Wynkoop)
+11256,8031,8005,Colorado,Arapahoe County,Colorado,Denver County,92622,Region 8 Headquarters (16th and Wynkoop)
+11258,8031,8013,Colorado,Boulder County,Colorado,Denver County,8003,Region 8 Headquarters (16th and Wynkoop)
+11259,8031,8014,Colorado,Broomfield County,Colorado,Denver County,5051,Region 8 Headquarters (16th and Wynkoop)
+11264,8031,8031,Colorado,Denver County,Colorado,Denver County,210717,Region 8 Headquarters (16th and Wynkoop)
+11265,8031,8035,Colorado,Douglas County,Colorado,Denver County,26834,Region 8 Headquarters (16th and Wynkoop)
+11276,8031,8059,Colorado,Jefferson County,Colorado,Denver County,68190,Region 8 Headquarters (16th and Wynkoop)
+11299,8031,8123,Colorado,Weld County,Colorado,Denver County,6239,Region 8 Headquarters (16th and Wynkoop)
+6731,6013,6001,California,Alameda County,California,Contra Costa County,41010,Region 9 Lab
+6735,6013,6013,California,Contra Costa County,California,Contra Costa County,283631,Region 9 Lab
+6760,6013,6075,California,San Francisco County,California,Contra Costa County,4116,Region 9 Lab
+6761,6013,6077,California,San Joaquin County,California,Contra Costa County,5861,Region 9 Lab
+6768,6013,6095,California,Solano County,California,Contra Costa County,19504,Region 9 Lab
+19444,13059,13013,Georgia,Barrow County,Georgia,Clarke County,2207,Region Four Field Equipment Center
+19449,13059,13059,Georgia,Clarke County,Georgia,Clarke County,41469,Region Four Field Equipment Center
+19460,13059,13135,Georgia,Gwinnett County,Georgia,Clarke County,1849,Region Four Field Equipment Center
+19467,13059,13157,Georgia,Jackson County,Georgia,Clarke County,3481,Region Four Field Equipment Center
+19472,13059,13195,Georgia,Madison County,Georgia,Clarke County,5159,Region Four Field Equipment Center
+19476,13059,13219,Georgia,Oconee County,Georgia,Clarke County,7711,Region Four Field Equipment Center
+19477,13059,13221,Georgia,Oglethorpe County,Georgia,Clarke County,3015,Region Four Field Equipment Center
+19486,13059,13297,Georgia,Walton County,Georgia,Clarke County,1405,Region Four Field Equipment Center
+19444,13059,13013,Georgia,Barrow County,Georgia,Clarke County,2207,Region Four Science and Ecosystems Support Division Laboratory
+19449,13059,13059,Georgia,Clarke County,Georgia,Clarke County,41469,Region Four Science and Ecosystems Support Division Laboratory
+19460,13059,13135,Georgia,Gwinnett County,Georgia,Clarke County,1849,Region Four Science and Ecosystems Support Division Laboratory
+19467,13059,13157,Georgia,Jackson County,Georgia,Clarke County,3481,Region Four Science and Ecosystems Support Division Laboratory
+19472,13059,13195,Georgia,Madison County,Georgia,Clarke County,5159,Region Four Science and Ecosystems Support Division Laboratory
+19476,13059,13219,Georgia,Oconee County,Georgia,Clarke County,7711,Region Four Science and Ecosystems Support Division Laboratory
+19477,13059,13221,Georgia,Oglethorpe County,Georgia,Clarke County,3015,Region Four Science and Ecosystems Support Division Laboratory
+19486,13059,13297,Georgia,Walton County,Georgia,Clarke County,1405,Region Four Science and Ecosystems Support Division Laboratory
+100916,42101,10003,Delaware,New Castle County,Pennsylvania,Philadelphia County,8972,Region Three Headquarters
+101070,42101,34005,New Jersey,Burlington County,Pennsylvania,Philadelphia County,16884,Region Three Headquarters
+101071,42101,34007,New Jersey,Camden County,Pennsylvania,Philadelphia County,31757,Region Three Headquarters
+101075,42101,34015,New Jersey,Gloucester County,Pennsylvania,Philadelphia County,16169,Region Three Headquarters
+101171,42101,42017,Pennsylvania,Bucks County,Pennsylvania,Philadelphia County,34582,Region Three Headquarters
+101176,42101,42029,Pennsylvania,Chester County,Pennsylvania,Philadelphia County,12297,Region Three Headquarters
+101184,42101,42045,Pennsylvania,Delaware County,Pennsylvania,Philadelphia County,52493,Region Three Headquarters
+101205,42101,42091,Pennsylvania,Montgomery County,Pennsylvania,Philadelphia County,58910,Region Three Headquarters
+101210,42101,42101,Pennsylvania,Philadelphia County,Pennsylvania,Philadelphia County,473604,Region Three Headquarters
+112198,48113,48085,Texas,Collin County,Texas,Dallas County,152920,Renaissance Tower
+112204,48113,48113,Texas,Dallas County,Texas,Dallas County,972082,Renaissance Tower
+112206,48113,48121,Texas,Denton County,Texas,Dallas County,110780,Renaissance Tower
+112211,48113,48139,Texas,Ellis County,Texas,Dallas County,24757,Renaissance Tower
+112245,48113,48257,Texas,Kaufman County,Texas,Dallas County,21602,Renaissance Tower
+112283,48113,48397,Texas,Rockwall County,Texas,Dallas County,18161,Renaissance Tower
+112293,48113,48439,Texas,Tarrant County,Texas,Dallas County,144079,Renaissance Tower
+81804,37063,37001,North Carolina,Alamance County,North Carolina,Durham County,4214,Research Triangle Park
+81814,37063,37037,North Carolina,Chatham County,North Carolina,Durham County,3125,Research Triangle Park
+81819,37063,37063,North Carolina,Durham County,North Carolina,Durham County,97552,Research Triangle Park
+81824,37063,37077,North Carolina,Granville County,North Carolina,Durham County,5741,Research Triangle Park
+81829,37063,37101,North Carolina,Johnston County,North Carolina,Durham County,2128,Research Triangle Park
+81838,37063,37135,North Carolina,Orange County,North Carolina,Durham County,18142,Research Triangle Park
+81842,37063,37145,North Carolina,Person County,North Carolina,Durham County,4359,Research Triangle Park
+81852,37063,37183,North Carolina,Wake County,North Carolina,Durham County,53082,Research Triangle Park
+67606,29510,17119,Illinois,Madison County,Missouri,St. Louis city,14195,Robert A. Young Federal Building
+67610,29510,17133,Illinois,Monroe County,Missouri,St. Louis city,3356,Robert A. Young Federal Building
+67621,29510,17163,Illinois,St. Clair County,Missouri,St. Louis city,16819,Robert A. Young Federal Building
+67698,29510,29099,Missouri,Jefferson County,Missouri,St. Louis city,14473,Robert A. Young Federal Building
+67722,29510,29183,Missouri,St. Charles County,Missouri,St. Louis city,14473,Robert A. Young Federal Building
+67725,29510,29189,Missouri,St. Louis County,Missouri,St. Louis city,96037,Robert A. Young Federal Building
+67737,29510,29510,Missouri,St. Louis city,Missouri,St. Louis city,82233,Robert A. Young Federal Building
+130202,54039,54005,West Virginia,Boone County,West Virginia,Kanawha County,1890,Robert C Byrd Courthouse
+130205,54039,54011,West Virginia,Cabell County,West Virginia,Kanawha County,1994,Robert C Byrd Courthouse
+130208,54039,54019,West Virginia,Fayette County,West Virginia,Kanawha County,1828,Robert C Byrd Courthouse
+130214,54039,54035,West Virginia,Jackson County,West Virginia,Kanawha County,2812,Robert C Byrd Courthouse
+130216,54039,54039,West Virginia,Kanawha County,West Virginia,Kanawha County,73747,Robert C Byrd Courthouse
+130218,54039,54043,West Virginia,Lincoln County,West Virginia,Kanawha County,1966,Robert C Byrd Courthouse
+130232,54039,54079,West Virginia,Putnam County,West Virginia,Kanawha County,9932,Robert C Byrd Courthouse
+130236,54039,54087,West Virginia,Roane County,West Virginia,Kanawha County,1084,Robert C Byrd Courthouse
+13431,9009,9001,Connecticut,Fairfield County,Connecticut,New Haven County,25891,Robert N. Giaimo Federal Building
+13432,9009,9003,Connecticut,Hartford County,Connecticut,New Haven County,20524,Robert N. Giaimo Federal Building
+13433,9009,9005,Connecticut,Litchfield County,Connecticut,New Haven County,12968,Robert N. Giaimo Federal Building
+13434,9009,9007,Connecticut,Middlesex County,Connecticut,New Haven County,14943,Robert N. Giaimo Federal Building
+13435,9009,9009,Connecticut,New Haven County,Connecticut,New Haven County,305190,Robert N. Giaimo Federal Building
+94967,40123,40027,Oklahoma,Cleveland County,Oklahoma,Pontotoc County,283,Robert S. Kerr Environmental Research Center
+94968,40123,40029,Oklahoma,Coal County,Oklahoma,Pontotoc County,351,Robert S. Kerr Environmental Research Center
+94970,40123,40049,Oklahoma,Garvin County,Oklahoma,Pontotoc County,353,Robert S. Kerr Environmental Research Center
+94972,40123,40063,Oklahoma,Hughes County,Oklahoma,Pontotoc County,316,Robert S. Kerr Environmental Research Center
+94983,40123,40099,Oklahoma,Murray County,Oklahoma,Pontotoc County,221,Robert S. Kerr Environmental Research Center
+94990,40123,40123,Oklahoma,Pontotoc County,Oklahoma,Pontotoc County,15654,Robert S. Kerr Environmental Research Center
+94991,40123,40125,Oklahoma,Pottawatomie County,Oklahoma,Pontotoc County,277,Robert S. Kerr Environmental Research Center
+94993,40123,40133,Oklahoma,Seminole County,Oklahoma,Pontotoc County,607,Robert S. Kerr Environmental Research Center
+43572,21111,18019,Indiana,Clark County,Kentucky,Jefferson County,18466,Romano Mazzoli Federal Building
+43580,21111,18043,Indiana,Floyd County,Kentucky,Jefferson County,12020,Romano Mazzoli Federal Building
+43586,21111,18061,Indiana,Harrison County,Kentucky,Jefferson County,4679,Romano Mazzoli Federal Building
+43627,21111,21029,Kentucky,Bullitt County,Kentucky,Jefferson County,22263,Romano Mazzoli Federal Building
+43650,21111,21111,Kentucky,Jefferson County,Kentucky,Jefferson County,323561,Romano Mazzoli Federal Building
+43675,21111,21185,Kentucky,Oldham County,Kentucky,Jefferson County,17459,Romano Mazzoli Federal Building
+43684,21111,21211,Kentucky,Shelby County,Kentucky,Jefferson County,6069,Romano Mazzoli Federal Building
+43685,21111,21215,Kentucky,Spencer County,Kentucky,Jefferson County,5233,Romano Mazzoli Federal Building
+21141,13121,13057,Georgia,Cherokee County,Georgia,Fulton County,22292,Sam Nunn Atlanta Federal Center
+21143,13121,13063,Georgia,Clayton County,Georgia,Fulton County,36020,Sam Nunn Atlanta Federal Center
+21144,13121,13067,Georgia,Cobb County,Georgia,Fulton County,94600,Sam Nunn Atlanta Federal Center
+21148,13121,13077,Georgia,Coweta County,Georgia,Fulton County,11692,Sam Nunn Atlanta Federal Center
+21154,13121,13089,Georgia,DeKalb County,Georgia,Fulton County,118775,Sam Nunn Atlanta Federal Center
+21156,13121,13097,Georgia,Douglas County,Georgia,Fulton County,16239,Sam Nunn Atlanta Federal Center
+21162,13121,13113,Georgia,Fayette County,Georgia,Fulton County,13017,Sam Nunn Atlanta Federal Center
+21164,13121,13117,Georgia,Forsyth County,Georgia,Fulton County,27037,Sam Nunn Atlanta Federal Center
+21166,13121,13121,Georgia,Fulton County,Georgia,Fulton County,340776,Sam Nunn Atlanta Federal Center
+21171,13121,13135,Georgia,Gwinnett County,Georgia,Fulton County,72526,Sam Nunn Atlanta Federal Center
+21179,13121,13151,Georgia,Henry County,Georgia,Fulton County,17933,Sam Nunn Atlanta Federal Center
+21210,13121,13223,Georgia,Paulding County,Georgia,Fulton County,9909,Sam Nunn Atlanta Federal Center
+3442,4013,4013,Arizona,Maricopa County,Arizona,Maricopa County,1752699,Sandra D. O'Connor Courthouse
+3446,4013,4021,Arizona,Pinal County,Arizona,Maricopa County,58341,Sandra D. O'Connor Courthouse
+128758,53033,53033,Washington,King County,Washington,King County,977541,Sea King Industrial Park
+128767,53033,53053,Washington,Pierce County,Washington,King County,90535,Sea King Industrial Park
+128771,53033,53061,Washington,Snohomish County,Washington,King County,119853,Sea King Industrial Park
+98817,42045,10003,Delaware,New Castle County,Pennsylvania,Delaware County,9547,Secure Vehicle Storage
+98861,42045,34007,New Jersey,Camden County,Pennsylvania,Delaware County,2651,Secure Vehicle Storage
+98864,42045,34015,New Jersey,Gloucester County,Pennsylvania,Delaware County,3515,Secure Vehicle Storage
+98900,42045,42017,Pennsylvania,Bucks County,Pennsylvania,Delaware County,2612,Secure Vehicle Storage
+98903,42045,42029,Pennsylvania,Chester County,Pennsylvania,Delaware County,19164,Secure Vehicle Storage
+98909,42045,42045,Pennsylvania,Delaware County,Pennsylvania,Delaware County,137983,Secure Vehicle Storage
+98921,42045,42091,Pennsylvania,Montgomery County,Pennsylvania,Delaware County,13175,Secure Vehicle Storage
+98925,42045,42101,Pennsylvania,Philadelphia County,Pennsylvania,Delaware County,17676,Secure Vehicle Storage
+68197,30049,30007,Montana,Broadwater County,Montana,Lewis and Clark County,621,Senator Max Sieben Baucus Federal Building
+68204,30049,30043,Montana,Jefferson County,Montana,Lewis and Clark County,2581,Senator Max Sieben Baucus Federal Building
+68207,30049,30049,Montana,Lewis and Clark County,Montana,Lewis and Clark County,31183,Senator Max Sieben Baucus Federal Building
+33239,18097,18011,Indiana,Boone County,Indiana,Marion County,11115,Shadeland Office Building
+33261,18097,18057,Indiana,Hamilton County,Indiana,Marion County,61624,Shadeland Office Building
+33262,18097,18059,Indiana,Hancock County,Indiana,Marion County,15331,Shadeland Office Building
+33264,18097,18063,Indiana,Hendricks County,Indiana,Marion County,36137,Shadeland Office Building
+33273,18097,18081,Indiana,Johnson County,Indiana,Marion County,29933,Shadeland Office Building
+33279,18097,18095,Indiana,Madison County,Indiana,Marion County,6647,Shadeland Office Building
+33280,18097,18097,Indiana,Marion County,Indiana,Marion County,349222,Shadeland Office Building
+33286,18097,18109,Indiana,Morgan County,Indiana,Marion County,11052,Shadeland Office Building
+7333,6037,6037,California,Los Angeles County,California,Los Angeles County,4181968,Southern California Response Warehouse
+7343,6037,6059,California,Orange County,California,Los Angeles County,185058,Southern California Response Warehouse
+7346,6037,6065,California,Riverside County,California,Los Angeles County,51975,Southern California Response Warehouse
+7349,6037,6071,California,San Bernardino County,California,Los Angeles County,135859,Southern California Response Warehouse
+7366,6037,6111,California,Ventura County,California,Los Angeles County,68295,Southern California Response Warehouse
+12906,9001,9001,Connecticut,Fairfield County,Connecticut,Fairfield County,353084,Stamford Government Center
+12908,9001,9005,Connecticut,Litchfield County,Connecticut,Fairfield County,11707,Stamford Government Center
+12910,9001,9009,Connecticut,New Haven County,Connecticut,Fairfield County,51350,Stamford Government Center
+13022,9001,36061,New York,New York County,Connecticut,Fairfield County,4899,Stamford Government Center
+13040,9001,36119,New York,Westchester County,Connecticut,Fairfield County,19444,Stamford Government Center
+88433,39035,39035,Ohio,Cuyahoga County,Ohio,Cuyahoga County,502300,"Steinmart Plaza, Westlake, Oh"
+88439,39035,39055,Ohio,Geauga County,Ohio,Cuyahoga County,16920,"Steinmart Plaza, Westlake, Oh"
+88451,39035,39085,Ohio,Lake County,Ohio,Cuyahoga County,38430,"Steinmart Plaza, Westlake, Oh"
+88453,39035,39093,Ohio,Lorain County,Ohio,Cuyahoga County,43600,"Steinmart Plaza, Westlake, Oh"
+88457,39035,39103,Ohio,Medina County,Ohio,Cuyahoga County,27647,"Steinmart Plaza, Westlake, Oh"
+88465,39035,39133,Ohio,Portage County,Ohio,Cuyahoga County,11872,"Steinmart Plaza, Westlake, Oh"
+88472,39035,39153,Ohio,Summit County,Ohio,Cuyahoga County,35941,"Steinmart Plaza, Westlake, Oh"
+77881,36061,9001,Connecticut,Fairfield County,New York,New York County,29746,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78038,36061,34003,New Jersey,Bergen County,New York,New York County,66501,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78043,36061,34013,New Jersey,Essex County,New York,New York County,34421,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78045,36061,34017,New Jersey,Hudson County,New York,New York County,87708,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78048,36061,34023,New Jersey,Middlesex County,New York,New York County,28970,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78063,36061,36005,New York,Bronx County,New York,New York County,204163,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78080,36061,36047,New York,Kings County,New York,New York County,429343,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78084,36061,36059,New York,Nassau County,New York,New York County,98487,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78085,36061,36061,New York,New York County,New York,New York County,730763,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78094,36061,36081,New York,Queens County,New York,New York County,384517,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78096,36061,36085,New York,Richmond County,New York,New York County,48783,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78104,36061,36103,New York,Suffolk County,New York,New York County,40993,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+78110,36061,36119,New York,Westchester County,New York,New York County,87102,Ted Weiss Federal Office Building (formerly Foley Square FOB)
+89568,39061,18029,Indiana,Dearborn County,Ohio,Hamilton County,8047,Test and Evaluation Facility
+89600,39061,21015,Kentucky,Boone County,Ohio,Hamilton County,10386,Test and Evaluation Facility
+89604,39061,21037,Kentucky,Campbell County,Ohio,Hamilton County,14899,Test and Evaluation Facility
+89618,39061,21117,Kentucky,Kenton County,Ohio,Hamilton County,18746,Test and Evaluation Facility
+89698,39061,39017,Ohio,Butler County,Ohio,Hamilton County,48733,Test and Evaluation Facility
+89701,39061,39025,Ohio,Clermont County,Ohio,Hamilton County,38856,Test and Evaluation Facility
+89713,39061,39061,Ohio,Hamilton County,Ohio,Hamilton County,304920,Test and Evaluation Facility
+89749,39061,39165,Ohio,Warren County,Ohio,Hamilton County,27975,Test and Evaluation Facility
+78447,36067,36011,New York,Cayuga County,New York,Onondaga County,6746,The Galleries
+78464,36067,36053,New York,Madison County,New York,Onondaga County,9799,The Galleries
+78470,36067,36065,New York,Oneida County,New York,Onondaga County,3234,The Galleries
+78471,36067,36067,New York,Onondaga County,New York,Onondaga County,201856,The Galleries
+78474,36067,36075,New York,Oswego County,New York,Onondaga County,16234,The Galleries
+52570,25025,25005,Massachusetts,Bristol County,Massachusetts,Suffolk County,12041,The John W. McCormack Post Office & Courthouse
+52572,25025,25009,Massachusetts,Essex County,Massachusetts,Suffolk County,46261,The John W. McCormack Post Office & Courthouse
+52576,25025,25017,Massachusetts,Middlesex County,Massachusetts,Suffolk County,148401,The John W. McCormack Post Office & Courthouse
+52578,25025,25021,Massachusetts,Norfolk County,Massachusetts,Suffolk County,96444,The John W. McCormack Post Office & Courthouse
+52579,25025,25023,Massachusetts,Plymouth County,Massachusetts,Suffolk County,30545,The John W. McCormack Post Office & Courthouse
+52580,25025,25025,Massachusetts,Suffolk County,Massachusetts,Suffolk County,270398,The John W. McCormack Post Office & Courthouse
+52581,25025,25027,Massachusetts,Worcester County,Massachusetts,Suffolk County,9764,The John W. McCormack Post Office & Courthouse
+14053,11001,11001,District of Columbia,District of Columbia,District of Columbia,District of Columbia,252256,The Ronald Reagan Building
+14139,11001,24003,Maryland,Anne Arundel County,District of Columbia,District of Columbia,18474,The Ronald Reagan Building
+14145,11001,24017,Maryland,Charles County,District of Columbia,District of Columbia,15719,The Ronald Reagan Building
+14150,11001,24027,Maryland,Howard County,District of Columbia,District of Columbia,9226,The Ronald Reagan Building
+14152,11001,24031,Maryland,Montgomery County,District of Columbia,District of Columbia,111756,The Ronald Reagan Building
+14153,11001,24033,Maryland,Prince George's County,District of Columbia,District of Columbia,139856,The Ronald Reagan Building
+14414,11001,51013,Virginia,Arlington County,District of Columbia,District of Columbia,49463,The Ronald Reagan Building
+14425,11001,51059,Virginia,Fairfax County,District of Columbia,District of Columbia,96224,The Ronald Reagan Building
+14437,11001,51107,Virginia,Loudoun County,District of Columbia,District of Columbia,10600,The Ronald Reagan Building
+14451,11001,51153,Virginia,Prince William County,District of Columbia,District of Columbia,22904,The Ronald Reagan Building
+14464,11001,51510,Virginia,Alexandria city,District of Columbia,District of Columbia,27707,The Ronald Reagan Building
+130714,54069,39013,Ohio,Belmont County,West Virginia,Ohio County,5785,The Valley Building
+130721,54069,39081,Ohio,Jefferson County,West Virginia,Ohio County,1349,The Valley Building
+130745,54069,42125,Pennsylvania,Washington County,West Virginia,Ohio County,734,The Valley Building
+130752,54069,54009,West Virginia,Brooke County,West Virginia,Ohio County,989,The Valley Building
+130761,54069,54051,West Virginia,Marshall County,West Virginia,Ohio County,4089,The Valley Building
+130765,54069,54069,West Virginia,Ohio County,West Virginia,Ohio County,14861,The Valley Building
+53877,26055,26009,Michigan,Antrim County,Michigan,Grand Traverse County,1406,Tribal Environmental Liaison - Traverse City (Relocation)
+53879,26055,26019,Michigan,Benzie County,Michigan,Grand Traverse County,2614,Tribal Environmental Liaison - Traverse City (Relocation)
+53890,26055,26055,Michigan,Grand Traverse County,Michigan,Grand Traverse County,38667,Tribal Environmental Liaison - Traverse City (Relocation)
+53895,26055,26079,Michigan,Kalkaska County,Michigan,Grand Traverse County,2038,Tribal Environmental Liaison - Traverse City (Relocation)
+53899,26055,26089,Michigan,Leelanau County,Michigan,Grand Traverse County,3670,Tribal Environmental Liaison - Traverse City (Relocation)
+53923,26055,26165,Michigan,Wexford County,Michigan,Grand Traverse County,1472,Tribal Environmental Liaison - Traverse City (Relocation)
+71296,32003,32003,Nevada,Clark County,Nevada,Clark County,896293,UNLV On-Campus EPA Facilities
+58439,27053,27003,Minnesota,Anoka County,Minnesota,Hennepin County,63008,US Courthouse
+58447,27053,27019,Minnesota,Carver County,Minnesota,Hennepin County,23208,US Courthouse
+58456,27053,27037,Minnesota,Dakota County,Minnesota,Hennepin County,63785,US Courthouse
+58464,27053,27053,Minnesota,Hennepin County,Minnesota,Hennepin County,517226,US Courthouse
+58494,27053,27123,Minnesota,Ramsey County,Minnesota,Hennepin County,72860,US Courthouse
+58502,27053,27139,Minnesota,Scott County,Minnesota,Hennepin County,26241,US Courthouse
+58503,27053,27141,Minnesota,Sherburne County,Minnesota,Hennepin County,12689,US Courthouse
+58514,27053,27163,Minnesota,Washington County,Minnesota,Hennepin County,22052,US Courthouse
+58517,27053,27171,Minnesota,Wright County,Minnesota,Hennepin County,26507,US Courthouse
+73712,34023,34003,New Jersey,Bergen County,New Jersey,Middlesex County,4561,Urban Watershed Research Facility
+73713,34023,34005,New Jersey,Burlington County,New Jersey,Middlesex County,4456,Urban Watershed Research Facility
+73717,34023,34013,New Jersey,Essex County,New Jersey,Middlesex County,8058,Urban Watershed Research Facility
+73719,34023,34017,New Jersey,Hudson County,New Jersey,Middlesex County,7066,Urban Watershed Research Facility
+73720,34023,34019,New Jersey,Hunterdon County,New Jersey,Middlesex County,3907,Urban Watershed Research Facility
+73721,34023,34021,New Jersey,Mercer County,New Jersey,Middlesex County,16549,Urban Watershed Research Facility
+73722,34023,34023,New Jersey,Middlesex County,New Jersey,Middlesex County,212651,Urban Watershed Research Facility
+73723,34023,34025,New Jersey,Monmouth County,New Jersey,Middlesex County,26869,Urban Watershed Research Facility
+73724,34023,34027,New Jersey,Morris County,New Jersey,Middlesex County,4049,Urban Watershed Research Facility
+73725,34023,34029,New Jersey,Ocean County,New Jersey,Middlesex County,10866,Urban Watershed Research Facility
+73728,34023,34035,New Jersey,Somerset County,New Jersey,Middlesex County,25142,Urban Watershed Research Facility
+73730,34023,34039,New Jersey,Union County,New Jersey,Middlesex County,28813,Urban Watershed Research Facility
+121023,49035,49011,Utah,Davis County,Utah,Salt Lake County,47388,Wallace F. Bennett Federal Building
+121035,49035,49035,Utah,Salt Lake County,Utah,Salt Lake County,490409,Wallace F. Bennett Federal Building
+121040,49035,49045,Utah,Tooele County,Utah,Salt Lake County,10375,Wallace F. Bennett Federal Building
+121042,49035,49049,Utah,Utah County,Utah,Salt Lake County,33741,Wallace F. Bennett Federal Building
+121046,49035,49057,Utah,Weber County,Utah,Salt Lake County,9378,Wallace F. Bennett Federal Building
+26257,17031,17031,Illinois,Cook County,Illinois,Cook County,2095117,Warehouse 111A (300 N. Elizabeth)
+26261,17031,17043,Illinois,DuPage County,Illinois,Cook County,138947,Warehouse 111A (300 N. Elizabeth)
+26280,17031,17089,Illinois,Kane County,Illinois,Cook County,44221,Warehouse 111A (300 N. Elizabeth)
+26284,17031,17097,Illinois,Lake County,Illinois,Cook County,77823,Warehouse 111A (300 N. Elizabeth)
+26290,17031,17111,Illinois,McHenry County,Illinois,Cook County,32627,Warehouse 111A (300 N. Elizabeth)
+26321,17031,17197,Illinois,Will County,Illinois,Cook County,89460,Warehouse 111A (300 N. Elizabeth)
+26348,17031,18089,Indiana,Lake County,Illinois,Cook County,42490,Warehouse 111A (300 N. Elizabeth)
+129345,53067,53027,Washington,Grays Harbor County,Washington,Thurston County,2136,Washington Operations Office
+129348,53067,53033,Washington,King County,Washington,Thurston County,2043,Washington Operations Office
+129350,53067,53041,Washington,Lewis County,Washington,Thurston County,3635,Washington Operations Office
+129351,53067,53045,Washington,Mason County,Washington,Thurston County,3416,Washington Operations Office
+129353,53067,53053,Washington,Pierce County,Washington,Thurston County,7657,Washington Operations Office
+129360,53067,53067,Washington,Thurston County,Washington,Thurston County,87072,Washington Operations Office
+52022,25017,25009,Massachusetts,Essex County,Massachusetts,Middlesex County,66930,West Cummings Park Warehouse
+52026,25017,25017,Massachusetts,Middlesex County,Massachusetts,Middlesex County,547589,West Cummings Park Warehouse
+52028,25017,25021,Massachusetts,Norfolk County,Massachusetts,Middlesex County,53182,West Cummings Park Warehouse
+52029,25017,25023,Massachusetts,Plymouth County,Massachusetts,Middlesex County,10427,West Cummings Park Warehouse
+52030,25017,25025,Massachusetts,Suffolk County,Massachusetts,Middlesex County,70770,West Cummings Park Warehouse
+52031,25017,25027,Massachusetts,Worcester County,Massachusetts,Middlesex County,67242,West Cummings Park Warehouse
+52061,25017,33011,New Hampshire,Hillsborough County,Massachusetts,Middlesex County,25413,West Cummings Park Warehouse
+52063,25017,33015,New Hampshire,Rockingham County,Massachusetts,Middlesex County,13791,West Cummings Park Warehouse
+130714,54069,39013,Ohio,Belmont County,West Virginia,Ohio County,5785,Wheeling Field Office
+130721,54069,39081,Ohio,Jefferson County,West Virginia,Ohio County,1349,Wheeling Field Office
+130745,54069,42125,Pennsylvania,Washington County,West Virginia,Ohio County,734,Wheeling Field Office
+130752,54069,54009,West Virginia,Brooke County,West Virginia,Ohio County,989,Wheeling Field Office
+130761,54069,54051,West Virginia,Marshall County,West Virginia,Ohio County,4089,Wheeling Field Office
+130765,54069,54069,West Virginia,Ohio County,West Virginia,Ohio County,14861,Wheeling Field Office
+95772,41003,41003,Oregon,Benton County,Oregon,Benton County,30157,Willamette Research Station
+95777,41003,41039,Oregon,Lane County,Oregon,Benton County,805,Willamette Research Station
+95779,41003,41043,Oregon,Linn County,Oregon,Benton County,6710,Willamette Research Station
+95780,41003,41047,Oregon,Marion County,Oregon,Benton County,830,Willamette Research Station
+95782,41003,41053,Oregon,Polk County,Oregon,Benton County,921,Willamette Research Station
+14053,11001,11001,District of Columbia,District of Columbia,District of Columbia,District of Columbia,252256,William Jefferson Clinton FED Bldg
+14139,11001,24003,Maryland,Anne Arundel County,District of Columbia,District of Columbia,18474,William Jefferson Clinton FED Bldg
+14145,11001,24017,Maryland,Charles County,District of Columbia,District of Columbia,15719,William Jefferson Clinton FED Bldg
+14150,11001,24027,Maryland,Howard County,District of Columbia,District of Columbia,9226,William Jefferson Clinton FED Bldg
+14152,11001,24031,Maryland,Montgomery County,District of Columbia,District of Columbia,111756,William Jefferson Clinton FED Bldg
+14153,11001,24033,Maryland,Prince George's County,District of Columbia,District of Columbia,139856,William Jefferson Clinton FED Bldg
+14414,11001,51013,Virginia,Arlington County,District of Columbia,District of Columbia,49463,William Jefferson Clinton FED Bldg
+14425,11001,51059,Virginia,Fairfax County,District of Columbia,District of Columbia,96224,William Jefferson Clinton FED Bldg
+14437,11001,51107,Virginia,Loudoun County,District of Columbia,District of Columbia,10600,William Jefferson Clinton FED Bldg
+14451,11001,51153,Virginia,Prince William County,District of Columbia,District of Columbia,22904,William Jefferson Clinton FED Bldg
+14464,11001,51510,Virginia,Alexandria city,District of Columbia,District of Columbia,27707,William Jefferson Clinton FED Bldg
+27164,17043,17031,Illinois,Cook County,Illinois,DuPage County,141403,Willowbrook Center
+27167,17043,17043,Illinois,DuPage County,Illinois,DuPage County,281682,Willowbrook Center
+27177,17043,17089,Illinois,Kane County,Illinois,DuPage County,46216,Willowbrook Center
+27179,17043,17093,Illinois,Kendall County,Illinois,DuPage County,15642,Willowbrook Center
+27181,17043,17097,Illinois,Lake County,Illinois,DuPage County,7299,Willowbrook Center
+27186,17043,17111,Illinois,McHenry County,Illinois,DuPage County,5721,Willowbrook Center
+27201,17043,17197,Illinois,Will County,Illinois,DuPage County,56335,Willowbrook Center
