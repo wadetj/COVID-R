@@ -12,10 +12,14 @@ library(MASS)
 
 source('C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/covidtsmav.R')
 
-fac<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/facility_commutes.csv", stringsAsFactors=FALSE)
+#fac<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/facility_commutes.csv", stringsAsFactors=FALSE)
+
+fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/facility_commutes.csv", stringsAsFactors=FALSE)
 
 #read in population data
-pops<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/covid_county_population_usafacts.csv", stringsAsFactors=FALSE)
+#pops<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/covid_county_population_usafacts.csv", stringsAsFactors=FALSE)
+
+pops<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/covid_county_population_usafacts.csv", stringsAsFactors=FALSE)
 pops<-filter(pops, pops[,1] %in% fac$FIPS_OUT)
 
 #popsfips<-pops[,1]
