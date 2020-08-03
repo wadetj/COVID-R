@@ -7,14 +7,11 @@ library(xtable)
 library(reshape)
 library(timsRstuff)
 
-
-#read in daily case data at county level
-#from JHU
-read.jhu.ts<-function(county, lag=3, read=TRUE) {
+read.jhu.ts<-function(county, lag=3, read=TRUE, datestart="2020-01-22") {
   if(read) dat<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv", stringsAsFactors=FALSE)
   
-  dat<-filter(dat, FIPS %in% county)
-  dat<-select(dat, c(FIPS, starts_with("X")))
+  dat<-dplyr::filter(dat, FIPS %in% county)
+  dat<-dplyr::select(dat, c(FIPS, starts_with("X")))
   
   if(nrow(dat>1)) { 
       temp<-apply(dat[, 2:ncol(dat)], 2, sum, na.rm=T)
@@ -31,12 +28,15 @@ read.jhu.ts<-function(county, lag=3, read=TRUE) {
   dat$newcases<-c(0, newcases)
   dat$newcases.lag<-mav2(dat$newcases, lag, fill=TRUE)
   dat<-dat[, -2]
+  x7<-c(rep(0, dim(dat)[1]-7), rep(1, 7))
   x14<-c(rep(0, dim(dat)[1]-14), rep(1, 14))
   x21<-c(rep(0, dim(dat)[1]-21), rep(1, 21))
-  dat<-cbind.data.frame(dat, x14, x21)
-  dat<-filter(dat, date>as.Date("2020-03-20",  "%Y-%m-%d"))
+  dat<-cbind.data.frame(dat, x14, x21, x7)
+  dat<-dplyr::filter(dat, date>as.Date(datestart,  "%Y-%m-%d"))
   return(dat)
 }
+
+
 
 # 
  #dc<-read.jhu.ts(county=37063)
