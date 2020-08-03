@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #Compared 7/29/2020 output, matched exactly for all intents and purposes
 # only differences were my file has 0 for counts for days without reports
 # and in number of decimal places
@@ -38,20 +38,33 @@ setnames(xtemp, "hospital_state_abbreviation", "state")
 setnames(xtemp, "hospital_county_fips", "fips")
 
 
-# zipstofips<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/ZIP_COUNTY_032020.csv", sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
-# 
-# #select county where zips match >80% to county
-# zipshi<-zipstofips[zipstofips$TOT_RATIO>0.8, ]
-# 
-# nazips<-merge(zipshi, nas, by.x="ZIP", by.y="hospital_zips", all.y=T)
-# nazips$fips<-ifelse(is.na(nazips$fips), nazips$COUNTY, nazips$fips) 
-# nazips$hospital_zips<-nazips$ZIP
-# 
-# nazips<-nazips[, -c(1:6)]
-# 
+
+#add in facilities without zipcode
+#uses HUD database available here: https://www.huduser.gov/portal/datasets/usps_crosswalk.html
+ #zipstofips<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/ZIP_COUNTY_032020.csv", sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
+
+
+ zipstofips<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/ZIP_COUNTY_032020.csv", 
+                        sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
+ 
+ #select data without fips
+ nas<-xtemp[is.na(fips)]
+
+ 
+  
+# select county where zips match >80% to county
+zipshi<-zipstofips[zipstofips$TOT_RATIO>0.8, ]
+ 
+nazips<-merge(zipshi, nas, by.x="ZIP", by.y="hospital_zips", all.y=T)
+nazips$fips<-ifelse(is.na(nazips$fips), nazips$COUNTY, nazips$fips)
+nazips$hospital_zips<-nazips$ZIP
+nazips<-nazips[, -c(1:6)]
+
+xtemp<-xtemp[!is.na(fips)]
 
 #xtemp<-rbind.data.table(xtemp, nazips)
 
+xtemp<-rbindlist(list(xtemp, nazips), use.names=TRUE)
 
 edtot<-xtemp[, .N, by=.(fips, date)]
 #cli<-xtemp[covid_like_illness==1, .N, by=.(fips, date)]
