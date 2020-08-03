@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #Compared 7/29/2020 output, matched exactly for all intents and purposes
 # only differences were my file has 0 for counts for days without reports
 # and in number of decimal places
