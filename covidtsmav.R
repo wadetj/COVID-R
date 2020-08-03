@@ -40,7 +40,7 @@ read.jhu.ts<-function(county, lag=3, read=TRUE) {
 
 # 
  #dc<-read.jhu.ts(county=37063)
-# oc<-read.jhu.ts(county=37135)
+# oc<-read.jhu.ts(county=37135)    
 # 
 # ggplot(dc, aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
 # dc %>%
