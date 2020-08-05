@@ -1,3 +1,4 @@
+
 #Input files: commute_results_v6,csv
 # ed_08_05_20.csv (download from HHS protect)
 # ZIP_COUNTY_032020.csv (from HUD to impute missing county fips and state
@@ -43,17 +44,44 @@ setnames(xtemp, "hospital_state_abbreviation", "state")
 setnames(xtemp, "hospital_county_fips", "fips")
 
 
-# zipstofips<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/ZIP_COUNTY_032020.csv", sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
-# 
-# #select county where zips match >80% to county
-# zipshi<-zipstofips[zipstofips$TOT_RATIO>0.8, ]
-# 
-# nazips<-merge(zipshi, nas, by.x="ZIP", by.y="hospital_zips", all.y=T)
-# nazips$fips<-ifelse(is.na(nazips$fips), nazips$COUNTY, nazips$fips) 
-# nazips$hospital_zips<-nazips$ZIP
-# 
-# nazips<-nazips[, -c(1:6)]
-# 
+
+#add in facilities without zipcode
+#uses HUD database available here: https://www.huduser.gov/portal/datasets/usps_crosswalk.html
+ #zipstofips<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/ZIP_COUNTY_032020.csv", sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
+
+
+ zipstofips<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/ZIP_COUNTY_032020.csv", 
+                        sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
+
+#add state information for missing state data
+# most if not all records with missing fips are missing state
+#although some zips may map to multiple states, we will just use 80% to determine states
+#data loss is minimal
+ #state fips code text file here: https://www.census.gov/library/reference/code-lists/ansi.html#par_textimage_3
+ 
+
+#define state and merge to zipstofips file
+ #zipstofips$strcounty<-as.character(zipstofips$COUNTY)
+ zipstofips$st<-as.numeric(ifelse(nchar(zipstofips$COUNTY)==4, substr(zipstofips$COUNTY, 1, 1), substr(zipstofips$COUNTY, 1, 2)))
+ statefips<-read.table("C:/Users/wadet/Documents/covid/statefipscodes.txt", stringsAsFactors=FALSE, sep="|", header=TRUE)
+ 
+ zipstofips<-merge(zipstofips, statefips, by.x="st", by.y="STATE", all.x=T)
+ 
+ #select data without fips
+nas<-xtemp[is.na(fips)]
+
+ # select county where zips match >80% to county
+zipshi<-zipstofips[zipstofips$TOT_RATIO>0.8, ]
+
+nazips<-merge(zipshi, nas, by.x="ZIP", by.y="hospital_zips", all.y=T)
+
+nazips$fips<-ifelse(is.na(nazips$fips), nazips$COUNTY, nazips$fips)
+nazips$hospital_zips<-nazips$ZIP
+nazips$state<-nazips$STUSAB
+
+nazips<-nazips[, -c(1:10)]
+
+xtemp<-xtemp[!is.na(fips)]
 
 #xtemp<-rbind.data.table(xtemp, nazips)
 
@@ -61,6 +89,7 @@ setnames(xtemp, "hospital_county_fips", "fips")
 dim(xtemp)
 #confirm dates are represented
 xtemp[, .N, by=.(date)]
+xtemp<-rbindlist(list(xtemp, nazips), use.names=TRUE)
 
 edtot<-xtemp[, .N, by=.(fips, date)]
 #cli<-xtemp[covid_like_illness==1, .N, by=.(fips, date)]
