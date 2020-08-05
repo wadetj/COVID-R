@@ -2,24 +2,32 @@
 #Input files: commute_results_v6,csv
 # ed_08_05_20.csv (download from HHS protect)
 # ZIP_COUNTY_032020.csv (from HUD to impute missing county fips and state
-# 
+# statefipscode.txt (map missing state data)
+# previous symptom file (ILI_CLI_by_facility XXXX)
 
+#Uses zipcode to impute county for records with missing counties
+#Also imputes missing state data for these records
+#calculates state level ILI and CLI for facilities with missing data
+#Missing facilities: MN US Courthouse (Hennepin County); MN Great Lakes & Ecology (ST. Louis CO)
+# OK-Region 6 (Tulsa County); CA-Region 9 Lab (Contra Costa County) 
 
 #Compared 7/29/2020 output, matched exactly for all intents and purposes
 # only differences were my file has 0 for counts for days without reports
 # and in number of decimal places
+
+#merging in state info not yet resolved
+#for now this   
+
 rm(list=ls())
 #starttime<-Sys.time()
 library(timsRstuff)
 library(data.table)
 library(dplyr)
-library(gdata)
+#library(gdata)
 
 #com<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 #com<-fread(file="C:/Users/wadet/Documents/covid/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
-
-
 
 #communte file with just work facility and unique FIPS code
 comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
@@ -28,7 +36,7 @@ comuni<-unique(comuni)
 
 ###EDIT THIS FILE
 #xtemp<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ed_7_29_20.csv", sep=",", na.strings=c("", "NA", "."))
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_08_05_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_8_05_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 
 xtemp<-xtemp[, -c(1:5, 8, 9, 10, 11, 13, 14, 17, 18, 19, 23, 24, 25, 26, 31)]
@@ -91,16 +99,20 @@ dim(xtemp)
 xtemp[, .N, by=.(date)]
 xtemp<-rbindlist(list(xtemp, nazips), use.names=TRUE)
 
+#Add state totals for later merging
+
 edtot<-xtemp[, .N, by=.(fips, date)]
+#statetot<-xtemp[, .N, by=.(state, date)]
 #cli<-xtemp[covid_like_illness==1, .N, by=.(fips, date)]
 #ili<-xtemp[influenza_like_illness==1, .N, by=.(fips, date)]
 symps<-xtemp[, .("cli"=sum(covid_like_illness), "ili"=sum(influenza_like_illness)), by=.(fips, date)]
 symps<-symps[!is.na(fips)]
-
 symps<-symps[order(fips, date)]
 
-#symps<-xtemp[, .("cli"=sum(covid_like_illness), by=.(fips, date))]
+#note code can be modified to include totals in one command as below
+statesymps<-xtemp[, .("cli"=sum(covid_like_illness), "ili"=sum(influenza_like_illness), "N"=.N),  by=.(state, date)]
 
+#symps<-xtemp[, .("cli"=sum(covid_like_illness), by=.(fips, date))]
 
 edtot<-edtot[order(fips, date)]
 setnames(edtot, "N", "total")
@@ -123,7 +135,6 @@ fills<-expand.grid(fipsc, ds)
 names(fills)<-c("fips", "date")
 fills<-as.data.table(fills)
 
-
 symps<-merge(symps, fills, by=c("fips", "date"), all=T)
 
 symps[, cli:=ifelse(is.na(cli), 0, cli)]
@@ -131,9 +142,22 @@ symps[, ili:=ifelse(is.na(ili), 0, ili)]
 symps[, reported:=ifelse(is.na(total), 0, 1)]
 symps[, total:=ifelse(is.na(total), 0, total)]
 
-
 sympscom<-merge(com, symps, by.x="FIPS_OUT", by.y="fips", all.x=T)
 sympscom<-sympscom[!is.na(date)]
+
+#fill ins for states with missing data
+fillstates<-expand.grid(state.abb, ds)
+fillstates<-as.data.table(fillstates)
+names(fillstates)<-c("state", "date")
+
+setnames(statesymps, "N", "total")
+statesymps<-merge(fillstates, statesymps, by=c("state", "date"), all.x=T)
+statesymps[, cli:=ifelse(is.na(cli), 0, cli)]
+statesymps[, ili:=ifelse(is.na(ili), 0, ili)]
+statesymps[, reported:=ifelse(is.na(total), 0, 1)]
+statesymps[, total:=ifelse(is.na(total), 0, total)]
+statesymps[, clipct:=(cli/total)*100]
+statesymps[, ilipct:=(ili/total)*100] 
 
 #NEED TO ACCOUNT FOR MULTIPLE FACILITIES IN SAME FIPS_IN
 
@@ -148,6 +172,29 @@ sympscom<-setnames(sympscom, "Facility.x", "Facility")
 sympscom<-sympscom[order(Facility, date)]
 
 sympscom<-unique(sympscom)
+sympscom$reported=ifelse(sympscom$reported>0, 1, 0)
+#sympscom[, noreport:=sum(reported), by=.(Facility)]
+
+#sum days with no reporting? less than five merge with state data?
+noreport<-sympscom[, .("report"=sum(reported), "fips"=mean(FIPS_IN)), by=.(Facility)]
+noreport[report<5, ]
+# merge state data to symptoms and then substitute for non-reporting?
+#this code converts state names to abbreviations, except PR, DC, VI
+#xxx <- state.abb[match(sympscom$Work_State_Name, state.name)]
+statesymps$statename<-state.name[match(statesymps$state, state.abb)]
+#sympscom2<-merge(statesymps, sympscom, by.x=c("statename", "date"), by.y=c("Work_State_Name", "date"), all=TRUE)
+#could work- need to work on this
+sympscom2<-merge(statesymps, sympscom, by.x=c("statename", "date"), by.y=c("Work_State_Name", "date"), all.y=TRUE)
+xx<-sympscom2$Facility %in% noreport$Facility
+sympscom2[xx, ]
+
+
+# update with state level data for sites without data
+#FIPS_IN=27137 (MN Great Lakes); 27053 (MN Courthouse)
+# 6013 (Region 9); 40143 (OK- Tulsa)
+#will this change from week to week?
+# should we use state data every day there is no report, or 
+# just facilities that report no data or mostly no data?
 
 #define minimal ili and cli
 
@@ -174,9 +221,6 @@ sympscom$minili<-ifelse(is.na(sympscom$ilipct), NA, sympscom$minili)
 sympscom$mincli=0
 sympscom$mincli<-ifelse(sympscom$clipct<=1.77, 1, 0)
 sympscom$mincli<-ifelse(is.na(sympscom$clipct), NA, sympscom$mincli)
-
-sympscom$reported=ifelse(sympscom$reported>0, 1, 0)
-
 
 #read in prior file for autoregression and format
 
