@@ -8,9 +8,11 @@
 #Uses zipcode to impute county for records with missing counties
 #Also imputes missing state data for these records
 
-#STILL WORKING-
 #calculates state level ILI and CLI for facilities with missing data
 #Missing facilities
+#ILI_CLI_by_facility.txt saved as ILI_CLI_by_facilityS.txt to indicate 
+#state imputation
+#add variable called stateflag to indicate imputation
 
 #merging in state info not yet resolved
 
@@ -208,6 +210,9 @@ group17<-c("Iowa|Kansas|Missouri|Nebraska")
 group15<-c("Alaska|Idaho|Oregon|Washington")
 group27<-c("Colorado|Montana|North Dakota|South Dakota|Utah|Wyoming")
 
+#sets sympscom to sympscom2 to include imputed state data
+sympscom<-sympscom2
+
 sympscom$minili<-0
 sympscom$minili<-ifelse(grepl(group19, sympscom$Work_State_Name) & sympscom$ilipct<=1.9, 1, 0)
 sympscom$minili<-ifelse(grepl(group24, sympscom$Work_State_Name) & sympscom$ilipct<=2.4, 1, sympscom$minili)
@@ -224,6 +229,8 @@ sympscom$mincli=0
 sympscom$mincli<-ifelse(sympscom$clipct<=1.77, 1, 0)
 sympscom$mincli<-ifelse(is.na(sympscom$clipct), NA, sympscom$mincli)
 
+sympscom$stateflag<-ifelse(sympscom$noreport==TRUE, "YES", "NO")
+
 #read in prior file for autoregression and format
 
 ### EDIT THIS FILE - need to add quote="\""
@@ -232,18 +239,18 @@ prevsymp<-read.table("C:/Users/wadet/Documents/covid/data_archive/ILI_CLI_by_fac
 
 names(sympscom)
 
-sympscomili<-dplyr::select(sympscom, c("Facility", "date", "ili", "ilipct", "minili", "total", "Work_County_Name", "Work_State_Name", "reported"))
-names(sympscomili)<-c("Facility", "ed_date", "count", "percent", "minimal", "total_ed_visits", "Work_County_Name", "Work_State_Name", "reported")  
+sympscomili<-dplyr::select(sympscom, c("Facility", "date", "ili", "ilipct", "minili", "total", "Work_County_Name", "Work_State_Name", "reported", "stateflag"))
+names(sympscomili)<-c("Facility", "ed_date", "count", "percent", "minimal", "total_ed_visits", "Work_County_Name", "Work_State_Name", "reported", "stateflag")  
 sympscomili$symptom="ILI"
 
 
-sympscomcli<-dplyr::select(sympscom, c("Facility", "date", "cli", "clipct", "mincli", "total", "Work_County_Name", "Work_State_Name", "reported"))
-names(sympscomcli)<-c("Facility", "ed_date", "count", "percent", "minimal", "total_ed_visits", "Work_County_Name", "Work_State_Name", "reported")  
+sympscomcli<-dplyr::select(sympscom, c("Facility", "date", "cli", "clipct", "mincli", "total", "Work_County_Name", "Work_State_Name", "reported", "stateflag"))
+names(sympscomcli)<-c("Facility", "ed_date", "count", "percent", "minimal", "total_ed_visits", "Work_County_Name", "Work_State_Name", "reported", "stateflag")  
 sympscomcli$symptom="CLI"
 
 allsymps<-rbind.data.frame(sympscomili, sympscomcli)
 
-colorder<-c("Facility", "Work_County_Name", "Work_State_Name", "ed_date", "total_ed_visits", "count", "percent", "minimal", "reported", "symptom")
+colorder<-c("Facility", "Work_County_Name", "Work_State_Name", "ed_date", "total_ed_visits", "count", "percent", "minimal","stateflag", "reported", "symptom")
 
 
 allsymps<-allsymps[, ..colorder]
@@ -257,6 +264,7 @@ allsymps$index=1
 prevsymp$reported<-factor(prevsymp$reported)
 prevsymp$minimal<-factor(prevsymp$minimal)
 prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
+prevsymp$stateflag=NA
 prevsymp$index=0
 
 allsymps2<-rbind.data.frame(allsymps, prevsymp)
@@ -278,9 +286,10 @@ allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-12"), ]
 allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
 #CHANGE FILE NAMES EVERY RUN
+#S added to indicated state data
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20812.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_12_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20812S.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_12_20S.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #endtime<-Sys.time()
