@@ -7,37 +7,31 @@
 
 #Uses zipcode to impute county for records with missing counties
 #Also imputes missing state data for these records
-#calculates state level ILI and CLI for facilities with missing data
-#Missing facilities: MN US Courthouse (Hennepin County); MN Great Lakes & Ecology (ST. Louis CO)
-# OK-Region 6 (Tulsa County); CA-Region 9 Lab (Contra Costa County) 
 
-#Compared 7/29/2020 output, matched exactly for all intents and purposes
-# only differences were my file has 0 for counts for days without reports
-# and in number of decimal places
+#STILL WORKING-
+#calculates state level ILI and CLI for facilities with missing data
+#Missing facilities
 
 #merging in state info not yet resolved
-#for now this   
 
 rm(list=ls())
 #starttime<-Sys.time()
 library(timsRstuff)
 library(data.table)
 library(dplyr)
-#library(gdata)
 
 #com<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 #com<-fread(file="C:/Users/wadet/Documents/covid/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 
-#communte file with just work facility and unique FIPS code
+#commute file with just work facility and unique FIPS code
 comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 
 ###EDIT THIS FILE
 #xtemp<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ed_7_29_20.csv", sep=",", na.strings=c("", "NA", "."))
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_8_05_20.csv", sep=",", na.strings=c("", "NA", "."))
-
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_8_12_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[, -c(1:5, 8, 9, 10, 11, 13, 14, 17, 18, 19, 23, 24, 25, 26, 31)]
 xtemp[, date:=as.Date(substr(c_visit_date_time, 1, 10))]
@@ -51,29 +45,26 @@ xtemp[, hospital_state_abbreviation:=gsub("\\[|\\]", "",  hospital_state_abbrevi
 setnames(xtemp, "hospital_state_abbreviation", "state")
 setnames(xtemp, "hospital_county_fips", "fips")
 
-
-
 #add in facilities without zipcode
 #uses HUD database available here: https://www.huduser.gov/portal/datasets/usps_crosswalk.html
  #zipstofips<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/ZIP_COUNTY_032020.csv", sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
 
-
- zipstofips<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/ZIP_COUNTY_032020.csv", 
+zipstofips<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/ZIP_COUNTY_032020.csv", 
                         sep=",",  na.strings=c("", "NA", ".", "#DIV/0!"))
 
 #add state information for missing state data
 # most if not all records with missing fips are missing state
 #although some zips may map to multiple states, we will just use 80% to determine states
 #data loss is minimal
- #state fips code text file here: https://www.census.gov/library/reference/code-lists/ansi.html#par_textimage_3
+#state fips code text file here: https://www.census.gov/library/reference/code-lists/ansi.html#par_textimage_3
  
 
 #define state and merge to zipstofips file
  #zipstofips$strcounty<-as.character(zipstofips$COUNTY)
- zipstofips$st<-as.numeric(ifelse(nchar(zipstofips$COUNTY)==4, substr(zipstofips$COUNTY, 1, 1), substr(zipstofips$COUNTY, 1, 2)))
- statefips<-read.table("C:/Users/wadet/Documents/covid/statefipscodes.txt", stringsAsFactors=FALSE, sep="|", header=TRUE)
+zipstofips$st<-as.numeric(ifelse(nchar(zipstofips$COUNTY)==4, substr(zipstofips$COUNTY, 1, 1), substr(zipstofips$COUNTY, 1, 2)))
+statefips<-read.table("C:/Users/wadet/Documents/covid/statefipscodes.txt", stringsAsFactors=FALSE, sep="|", header=TRUE)
  
- zipstofips<-merge(zipstofips, statefips, by.x="st", by.y="STATE", all.x=T)
+zipstofips<-merge(zipstofips, statefips, by.x="st", by.y="STATE", all.x=T)
  
  #select data without fips
 nas<-xtemp[is.na(fips)]
@@ -146,7 +137,10 @@ sympscom<-merge(com, symps, by.x="FIPS_OUT", by.y="fips", all.x=T)
 sympscom<-sympscom[!is.na(date)]
 
 #fill ins for states with missing data
-fillstates<-expand.grid(state.abb, ds)
+#add DC and VI to state.abb and state.name
+stateab<-c(state.abb, "DC", "VI", "PR")
+statename2<-c(state.name, "District of Columbia", "Virgin Islands", "Puerto Rico")
+fillstates<-expand.grid(stateab, ds)
 fillstates<-as.data.table(fillstates)
 names(fillstates)<-c("state", "date")
 
@@ -158,6 +152,10 @@ statesymps[, reported:=ifelse(is.na(total), 0, 1)]
 statesymps[, total:=ifelse(is.na(total), 0, total)]
 statesymps[, clipct:=(cli/total)*100]
 statesymps[, ilipct:=(ili/total)*100] 
+
+#change names for state data
+setnames(statesymps, c("cli", "ili", "total", "reported", "clipct", "ilipct"), c("cli.state", "ili.state", "total.state", "reported.state", "clipct.state", "ilipct.state"))
+
 
 #NEED TO ACCOUNT FOR MULTIPLE FACILITIES IN SAME FIPS_IN
 
@@ -173,28 +171,32 @@ sympscom<-sympscom[order(Facility, date)]
 
 sympscom<-unique(sympscom)
 sympscom$reported=ifelse(sympscom$reported>0, 1, 0)
-#sympscom[, noreport:=sum(reported), by=.(Facility)]
 
-#sum days with no reporting? less than five merge with state data?
+#flag facilities with no reports for week
 noreport<-sympscom[, .("report"=sum(reported), "fips"=mean(FIPS_IN)), by=.(Facility)]
-noreport[report<5, ]
-# merge state data to symptoms and then substitute for non-reporting?
-#this code converts state names to abbreviations, except PR, DC, VI
-#xxx <- state.abb[match(sympscom$Work_State_Name, state.name)]
-statesymps$statename<-state.name[match(statesymps$state, state.abb)]
-#sympscom2<-merge(statesymps, sympscom, by.x=c("statename", "date"), by.y=c("Work_State_Name", "date"), all=TRUE)
-#could work- need to work on this
-sympscom2<-merge(statesymps, sympscom, by.x=c("statename", "date"), by.y=c("Work_State_Name", "date"), all.y=TRUE)
-xx<-sympscom2$Facility %in% noreport$Facility
-sympscom2[xx, ]
+noreport<-noreport[report==0, ]
 
+print(noreport)
+# merge state data to symptoms and then substitute for non-reporting?
+#this  converts state names to abbreviations, except PR, DC, VI
+sympscom$stateab<-stateab[match(sympscom$Work_State_Name, statename2)]
+
+
+#sympscom2 merges state data, sympscom does not
+
+sympscom2<-merge(statesymps, sympscom, by.x=c("state", "date"), by.y=c("stateab", "date"), all.y=TRUE)
+sympscom2$noreport<-sympscom2$Facility %in% noreport$Facility
 
 # update with state level data for sites without data
-#FIPS_IN=27137 (MN Great Lakes); 27053 (MN Courthouse)
-# 6013 (Region 9); 40143 (OK- Tulsa)
-#will this change from week to week?
-# should we use state data every day there is no report, or 
-# just facilities that report no data or mostly no data?
+# for sites with no reported data
+# substitute state level data for ili cli total, etc.
+
+sympscom2$ili<-ifelse(sympscom2$noreport==TRUE, sympscom2$ili.state, sympscom2$ili)
+sympscom2$cli<-ifelse(sympscom2$noreport==TRUE, sympscom2$cli.state, sympscom2$cli)
+sympscom2$ilipct<-ifelse(sympscom2$noreport==TRUE, sympscom2$ilipct.state, sympscom2$ilipct)
+sympscom2$clipct<-ifelse(sympscom2$noreport==TRUE, sympscom2$clipct.state, sympscom2$clipct)
+sympscom2$total<-ifelse(sympscom2$noreport==TRUE, sympscom2$total.state, sympscom2$total)
+
 
 #define minimal ili and cli
 
@@ -226,7 +228,7 @@ sympscom$mincli<-ifelse(is.na(sympscom$clipct), NA, sympscom$mincli)
 
 ### EDIT THIS FILE - need to add quote="\""
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_7_29_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/data_archive/ILI_CLI_by_facility_8_05_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -269,7 +271,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 1 month
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-05"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-12"), ]
 
 
 #format dates like SAS
@@ -277,8 +279,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
 #CHANGE FILE NAMES EVERY RUN
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20805.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_05_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20812.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_12_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #endtime<-Sys.time()
@@ -300,4 +302,48 @@ write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_05_
 # table(xx2$minimal)
 # table(sympscom$minili)
 # table(xx2$minimal)
+# 
+#Compared 7/29/2020 output, matched exactly for all intents and purposes
+# only differences were my file has 0 for counts for days without reports
+# and in number of decimal places
+
+# CODE TO COMPARE STATE AND FACILITY LEVEL ILI/CLI
+# library(ggplot2)
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/CAcli.pdf")
+# sympscom2 %>%
+# filter(state=="CA") %>%
+# ggplot(aes(date, clipct)) + geom_point(color="blue") + geom_point(aes(date, clipct.state), color="red")
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/CAili.pdf")
+# sympscom2 %>%
+#         filter(state=="CA") %>%
+#         ggplot(aes(date, ilipct)) + geom_point(color="blue") + geom_point(aes(date, ilipct.state), color="red")
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/MNili.pdf")
+# sympscom2 %>%
+# filter(state=="MN") %>%
+# ggplot(aes(date, ilipct)) + geom_point(color="blue") + geom_point(aes(date, ilipct.state), color="red")
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/MNcli.pdf")
+# sympscom2 %>%
+# filter(state=="MN") %>%
+# ggplot(aes(date, clipct)) + geom_point(color="blue") + geom_point(aes(date, clipct.state), color="red")
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/OKili.pdf")
+# sympscom2 %>%
+#         filter(state=="OK") %>%
+#         ggplot(aes(date, ilipct)) + geom_point(color="blue") + geom_point(aes(date, ilipct.state), color="red")
+# dev.off()
+# 
+# pdf(file="C:/Users/wadet/Documents/covid/OKcli.pdf")
+# sympscom2 %>%
+#         filter(state=="OK") %>%
+#         ggplot(aes(date, clipct)) + geom_point(color="blue") + geom_point(aes(date, clipct.state), color="red")
+# dev.off()
 # 
