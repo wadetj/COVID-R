@@ -1,3 +1,6 @@
+##function to read in hopkins time series data at county level
+
+
 rm(list=ls())
 
 library(ggplot2)
@@ -6,6 +9,7 @@ library(knitr)
 library(xtable)
 library(reshape)
 library(timsRstuff)
+
 
 read.jhu.ts<-function(county, lag=3, read=TRUE, datestart="2020-01-22") {
   if(read) dat<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv", stringsAsFactors=FALSE)
@@ -31,16 +35,29 @@ read.jhu.ts<-function(county, lag=3, read=TRUE, datestart="2020-01-22") {
   x7<-c(rep(0, dim(dat)[1]-7), rep(1, 7))
   x14<-c(rep(0, dim(dat)[1]-14), rep(1, 14))
   x21<-c(rep(0, dim(dat)[1]-21), rep(1, 21))
-  dat<-cbind.data.frame(dat, x14, x21, x7)
+  x28<-c(rep(0, dim(dat)[1]-28), rep(1, 28))
+  dat<-cbind.data.frame(dat, x14, x21, x7, x28)
   dat<-dplyr::filter(dat, date>as.Date(datestart,  "%Y-%m-%d"))
   return(dat)
 }
 
 
+xx<-read.jhu.ts(county=c(44003, 44005, 44007, 44009))
+
+xx %>%
+filter(x21==1) %>%
+ ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
+
+
+xx %>%
+  filter(x28==1) %>%
+  ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
+
+
 
 # 
  #dc<-read.jhu.ts(county=37063)
-# oc<-read.jhu.ts(county=37135)    
+# oc<-read.jhu.ts(county=37135)
 # 
 # ggplot(dc, aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
 # dc %>%
