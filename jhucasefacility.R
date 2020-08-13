@@ -1,4 +1,6 @@
+
 #read in JHU data and create data frames for each EPA facility/commuting area
+#misc analysis, graphs for Chapel Hill
 
 rm(list=ls())
 
@@ -14,12 +16,16 @@ source('C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavi
 
 #fac<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/facility_commutes.csv", stringsAsFactors=FALSE)
 
-fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/facility_commutes.csv", stringsAsFactors=FALSE)
+#fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/facility_commutes.csv", stringsAsFactors=FALSE)
+
+fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v6.csv", stringsAsFactors=FALSE)
+
 
 #read in population data
 #pops<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/covid_county_population_usafacts.csv", stringsAsFactors=FALSE)
 
 pops<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/covid_county_population_usafacts.csv", stringsAsFactors=FALSE)
+
 pops<-filter(pops, pops[,1] %in% fac$FIPS_OUT)
 
 #popsfips<-pops[,1]
@@ -42,7 +48,7 @@ dat<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master
 facls<-split(fac$FIPS_OUT, fac$FIPS_IN)
 
 for(i in 1:length(facls)) {
-  tname<-paste("FIPS", facloc[[i]], sep="")
+  tname<-paste("FIPS", facloc[i], sep="")
   tdat<-read.jhu.ts(county=c(facls[[i]]), read=FALSE)
   popdat<-filter(pops, pops[,1] %in% facls[[i]])
   population<-sum(popdat$population)
@@ -50,9 +56,12 @@ for(i in 1:length(facls)) {
   assign(tname, tdat)
 }
 
-#calculate 2 week incidence 
-(sum(FIPS37135$newcases[FIPS37135$x14==1])/FIPS37135$population[1])*100000
 
+
+#calculate 2 week incidence 
+sum(FIPS37135$newcases[FIPS37135$x14==1])/(FIPS37135$population[1])*100000
+#For SAS comparisons
+write.csv(FIPS37135, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/FIPS37135.csv", row.names=FALSE, na=".")
 
 #two week plot for HSF
 FIPS37135 %>%
@@ -62,6 +71,15 @@ FIPS37135 %>%
 
 #autorgression model for HSF
 otemp<-lm(newcases.lag~date+lag(newcases.lag, 1)+lag(newcases.lag, 2)+lag(newcases.lag, 3)+lag(newcases.lag, 4)+lag(newcases.lag, 5)+lag(newcases.lag, 6)+lag(newcases.lag, 7), data=FIPS37135, subset=x14==1)
+otempstep<-stepAIC(otemp)
+summary(otempstep)
+glmCIs(otemp)
+glmCIs(otempstep)
+
+
+
+#autorgression model for HSF
+otemp<-lm(newcases.lag~date+lag(newcases.lag, 1)+lag(newcases.lag, 2)+lag(newcases.lag, 3)+lag(newcases.lag, 4)+lag(newcases.lag, 5)+lag(newcases.lag, 6)+lag(newcases.lag, 7), data=FIPS37135, subset=x21==1)
 otempstep<-stepAIC(otemp)
 summary(otempstep)
 glmCIs(otemp)
@@ -78,9 +96,21 @@ FIPS37135 %>%
   ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
 
 
-FIPS37135 %>%
+#Narragansett
+
+
+FIPS44009 %>%
   filter(x14==1) %>%
-  ggplot(aes(date, newcases.lag))+geom_point()+geom_smooth(color="blue", lwd=2)+geom_smooth(method="lm", color="black", lwd=2)
+  ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)+geom_smooth(color="blue", lwd=2)
+
+
+FIPS44009 %>%
+  filter(x28==1) %>%
+  ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)+geom_smooth(color="blue", lwd=2)
+
+
+
+
 
 # Additional examples
 
@@ -117,3 +147,72 @@ FIPS37135 %>%
 # 
 # zz+geom_abline(intercept=100, slope=10, lwd=2, color="black")
 # 
+
+
+#Cincinnati FIPS39061
+
+
+FIPS39061 %>%
+  filter(x21==1) %>%
+  ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)
+
+
+
+
+sel<-grep("District", fac$Work_State_Name)
+dc<-fac[sel, ]
+
+dcfips<-dc$FIPS_OUT
+dcfips<-unique(dcfips)
+
+for(i in 1:length(dcfips)) {
+  tname<-paste("c", dcfips[i], sep="")
+  tdat<-read.jhu.ts(county=dcfips[i], read=FALSE)
+  popdat<-filter(pops, pops[,1] %in% dcfips[i])
+  population<-sum(popdat$population)
+  tdat<-cbind.data.frame(tdat, population)
+  assign(tname, tdat)
+}
+
+IR<-NULL
+for(i in 1:length(dcfips)) {
+xname<-paste("c", dcfips[i], sep="")
+xdat<-get(xname)
+IR[i]<-round(sum(xdat$newcases[xdat$x14==1])/(xdat$population[1])*100000, 2)
+#print(paste(xdat, "=",  IR, sep=""))
+print(paste(dcfips[i], "=", IR[i]), quote=FALSE)
+
+}
+
+dcIR<-round(sum(FIPS11001$newcases[xdat$x14==1])/(FIPS11001$population[1])*100000, 2)
+print(paste("DC=", dcIR), quote=FALSE)
+
+IR<-cbind.data.frame(dcfips, IR)
+
+
+for(i in 1:length(facls)) {
+  for(j in 1:length(facls[[i]])) {
+      facfips<-paste(facls[[i]]][j], sep="")
+      tcdat<-read.jhu.ts(county=facfips, read=FALSE)
+      popdat<-filter(pops, pops[,1] %in% facfips)
+      population<-sum(popdat$population)
+      tdat<-cbind.data.frame(tdat, population)
+      assign(tname, tdat)
+}
+
+IR<-NULL
+for(i in 1:length(dcfips)) {
+  xname<-paste("c", dcfips[i], sep="")
+  xdat<-get(xname)
+  IR[i]<-round(sum(xdat$newcases[xdat$x14==1])/(xdat$population[1])*100000, 2)
+  #print(paste(xdat, "=",  IR, sep=""))
+  print(paste(dcfips[i], "=", IR[i]), quote=FALSE)
+  
+}
+
+dcIR<-round(sum(FIPS11001$newcases[xdat$x14==1])/(FIPS11001$population[1])*100000, 2)
+print(paste("DC=", dcIR), quote=FALSE)
+
+IR<-cbind.data.frame(dcfips, IR)
+print(IR)
+
