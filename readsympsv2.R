@@ -230,10 +230,15 @@ sympscom$mincli<-ifelse(sympscom$clipct<=1.77, 1, 0)
 sympscom$mincli<-ifelse(is.na(sympscom$clipct), NA, sympscom$mincli)
 
 sympscom$stateflag<-ifelse(sympscom$noreport==TRUE, "YES", "NO")
+#print records where state data was imputed
+sympscom[stateflag=="YES" & !is.na(clipct), ]
+table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
+
 
 #read in prior file for autoregression and format
 
 ### EDIT THIS FILE - need to add quote="\""
+#For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 prevsymp<-read.table("C:/Users/wadet/Documents/covid/data_archive/ILI_CLI_by_facility_8_05_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
@@ -264,6 +269,7 @@ allsymps$index=1
 prevsymp$reported<-factor(prevsymp$reported)
 prevsymp$minimal<-factor(prevsymp$minimal)
 prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
+#Note will need to change this once stateflag is in previous datasets
 prevsymp$stateflag=NA
 prevsymp$index=0
 
@@ -287,6 +293,7 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
 #CHANGE FILE NAMES EVERY RUN
 #S added to indicated state data
+#remove S once this is integrated
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20812S.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_12_20S.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
