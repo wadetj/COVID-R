@@ -10,11 +10,10 @@
 
 #calculates state level ILI and CLI for facilities with missing data
 #Missing facilities
-#ILI_CLI_by_facility.txt saved as ILI_CLI_by_facilityS.txt to indicate 
-#state imputation
-#add variable called stateflag to indicate imputation
 
-#merging in state info not yet resolved
+#add variable called stateflag to indicate state data used when no local data
+#ILI_CLI_by_facility.txt saved as ILI_CLI_by_facilityS.txt to indicate 
+#state imputation (only for 8/12/2020 file)
 
 rm(list=ls())
 #starttime<-Sys.time()
@@ -139,7 +138,7 @@ sympscom<-merge(com, symps, by.x="FIPS_OUT", by.y="fips", all.x=T)
 sympscom<-sympscom[!is.na(date)]
 
 #fill ins for states with missing data
-#add DC and VI to state.abb and state.name
+#add DC, PR and VI to state.abb and state.name
 stateab<-c(state.abb, "DC", "VI", "PR")
 statename2<-c(state.name, "District of Columbia", "Virgin Islands", "Puerto Rico")
 fillstates<-expand.grid(stateab, ds)
