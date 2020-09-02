@@ -1,5 +1,6 @@
+#Need to uncomment command on line 273 to handle dates for week of 9/9
+#Input files: updated to commute_results_v7.csv, 9/2/2020
 
-#Input files: commute_results_v6,csv
 # ed_08_05_20.csv (download from HHS protect)
 # ZIP_COUNTY_032020.csv (from HUD to impute missing county fips and state
 # statefipscode.txt (map missing state data)
@@ -23,7 +24,8 @@ library(dplyr)
 
 #com<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
 #com<-fread(file="C:/Users/wadet/Documents/covid/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
-com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v6.csv", sep=",",  na.strings=c("", "NA", "."))
+#changed to communte_results_v7 on 9/2/2020
+com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v7.csv", sep=",",  na.strings=c("", "NA", "."))
 
 #commute file with just work facility and unique FIPS code
 comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
@@ -32,7 +34,7 @@ comuni<-unique(comuni)
 
 ###EDIT THIS FILE
 #xtemp<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ed_7_29_20.csv", sep=",", na.strings=c("", "NA", "."))
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_8_26_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_9_02_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[, -c(1:5, 8, 9, 10, 11, 13, 14, 17, 18, 19, 23, 24, 25, 26, 31)]
 xtemp[, date:=as.Date(substr(c_visit_date_time, 1, 10))]
@@ -240,7 +242,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 ### EDIT THIS FILE - need to add quote="\""
 #For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_19_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_26_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -266,7 +268,9 @@ allsymps$index=1
 
 prevsymp$reported<-factor(prevsymp$reported)
 prevsymp$minimal<-factor(prevsymp$minimal)
-prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
+# 8/26 ILI CLI file did not output dates correctly in SAS format
+#this statement will be needed in subsequent weeks but not for 8/26 file
+#prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
 
 #resets stateflag to NA if it does not exist, otherwise keeps it
 if("stateflag" %in% names(prevsymp)==FALSE) prevsymp$stateflag=NA
@@ -288,7 +292,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-19"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-26"), ]
 
 
 #format dates like SAS
@@ -298,8 +302,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #S added to indicated state data
 #remove S once this is integrated - S removed as of 8/19
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20826.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_26_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20902.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_02_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #endtime<-Sys.time()
