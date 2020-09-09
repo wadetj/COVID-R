@@ -34,7 +34,7 @@ comuni<-unique(comuni)
 
 ###EDIT THIS FILE
 #xtemp<-fread(file="C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ed_7_29_20.csv", sep=",", na.strings=c("", "NA", "."))
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_9_02_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_9_09_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[, -c(1:5, 8, 9, 10, 11, 13, 14, 17, 18, 19, 23, 24, 25, 26, 31)]
 xtemp[, date:=as.Date(substr(c_visit_date_time, 1, 10))]
@@ -242,7 +242,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 ### EDIT THIS FILE - need to add quote="\""
 #For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_8_26_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_02_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -270,7 +270,7 @@ prevsymp$reported<-factor(prevsymp$reported)
 prevsymp$minimal<-factor(prevsymp$minimal)
 # 8/26 ILI CLI file did not output dates correctly in SAS format
 #this statement will be needed in subsequent weeks but not for 8/26 file
-#prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
+prevsymp$ed_date<-as.Date(prevsymp$ed_date, "%d %b %Y")
 
 #resets stateflag to NA if it does not exist, otherwise keeps it
 if("stateflag" %in% names(prevsymp)==FALSE) prevsymp$stateflag=NA
@@ -292,7 +292,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-07-26"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-08-02"), ]
 
 
 #format dates like SAS
@@ -302,8 +302,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #S added to indicated state data
 #remove S once this is integrated - S removed as of 8/19
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20902.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_02_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20909.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_09_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #endtime<-Sys.time()
