@@ -251,14 +251,13 @@ write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsympsnewdata0929.txt",
 
 endtime<-Sys.time()
 endtime-starttime
+
 #code to check with raw aggregared data file
 
 # xx<-filter(xtemp, date==as.Date("2020-09-01") & (fips ==17031 | fips==17043 | fips==17089 |fips==17097 | fips==17111 | fips==17197 | fips==18089))
 # sum(xx$total)
 # sum(xx$cli)
 # sum(xx$ili)
-
-
 
 #code to compare with SAS output
 #My code does not keep last day of period when there is no data (in this case 7-22)
