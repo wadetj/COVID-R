@@ -32,9 +32,9 @@ comuni<-unique(comuni)
 
 
 ###EDIT THIS FILE
-#xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_9_23_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_9_30_20.csv", sep=",", na.strings=c("", "NA", "."))
 
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_data_county_aggregates_timeseries.csv", sep=",", na.strings=c("", "NA", "."))
+#xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_data_county_aggregates_timeseries.csv", sep=",", na.strings=c("", "NA", "."))
 xtemp[, date:=as.Date(date)]
 
 #drop unnecessary vars
@@ -185,7 +185,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 ### EDIT THIS FILE - need to add quote="\""
 #For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_16_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_23_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -235,7 +235,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-08-16"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-08-23"), ]
 
 
 #format dates like SAS
@@ -245,12 +245,13 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #S added to indicated state data
 #remove S once this is integrated - S removed as of 8/19
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsympsnewdata0929.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-#write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_23_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps0930.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_30_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
-
+ 
 endtime<-Sys.time()
 endtime-starttime
+
 
 #code to check with raw aggregared data file
 
