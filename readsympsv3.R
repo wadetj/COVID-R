@@ -25,9 +25,9 @@ library(data.table)
 library(dplyr)
 
 #changed to communte_results_v7 on 9/2/2020
-#com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v8.csv", sep=",",  na.strings=c("", "NA", "."))
+com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v8.csv", sep=",",  na.strings=c("", "NA", "."))
 #read from local directory until git hub is updated
-com<-fread(input="C:/Users/wadet/Documents/covid/commute_results_v8.csv", sep=",",  na.strings=c("", "NA", "."))
+#com<-fread(input="C:/Users/wadet/Documents/covid/commute_results_v8.csv", sep=",",  na.strings=c("", "NA", "."))
 
 
 #commute file with just work facility and unique FIPS code
@@ -36,7 +36,7 @@ comuni<-unique(comuni)
 
 
 ###EDIT THIS FILE
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_10_07_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_10_14_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 #xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_data_county_aggregates_timeseries.csv", sep=",", na.strings=c("", "NA", "."))
 xtemp[, date:=as.Date(date)]
@@ -49,10 +49,6 @@ xtemp<-xtemp[, -c(22:45)]
 setnames(xtemp, c("hospital_county_fips", "hospital_state_abbreviation",  "daily_covid_like_illness", "daily_influenza_like_illness", "daily_er_visits"), c("fips", "state", "cli", "ili", "total"))
 symps<-xtemp[, c("fips", "state", "date", "cli", "ili", "total")]
                                                                         
-
-
-#code no longer applicable as already aggregated to county
-
 #confirm no missing fips codes
 table(is.na(symps$fips))
 
@@ -189,7 +185,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 ### EDIT THIS FILE - need to add quote="\""
 #For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_9_30_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_10_07_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -238,7 +234,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-08-30"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-09-06"), ]
 
 
 #format dates like SAS
@@ -248,8 +244,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #S added to indicated state data
 #remove S once this is integrated - S removed as of 8/19
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1007.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_10_07_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1014.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_10_14_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 
