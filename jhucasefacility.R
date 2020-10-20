@@ -1,6 +1,8 @@
 
 #read in JHU data and create data frames for each EPA facility/commuting area
 #misc analysis, graphs for Chapel Hill
+#read in latest commute file
+#add function and print highest and lowest incident rates by facility (calcrates)
 
 rm(list=ls())
 
@@ -18,7 +20,7 @@ source('C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavi
 
 #fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/facility_commutes.csv", stringsAsFactors=FALSE)
 
-fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v6.csv", stringsAsFactors=FALSE)
+fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v7.csv", stringsAsFactors=FALSE)
 
 
 #read in population data
@@ -55,8 +57,6 @@ for(i in 1:length(facls)) {
   tdat<-cbind.data.frame(tdat, population)
   assign(tname, tdat)
 }
-
-
 
 #calculate 2 week incidence 
 sum(FIPS37135$newcases[FIPS37135$x14==1])/(FIPS37135$population[1])*100000
@@ -109,9 +109,70 @@ FIPS44009 %>%
   ggplot(aes(date, newcases))+geom_bar(stat="identity")+geom_line(aes(date, newcases.lag), color="red", lwd=2)+geom_smooth(color="blue", lwd=2)+geom_smooth(color="blue", lwd=2)
 
 
+#use fips lists to calculate and print highest and lowest facilities
+
+fipsin<-unique(fac$FIPS_IN)
+fipslist<-paste("FIPS", fipsin, sep="")
+
+
+calcrates<-function(fipsdf, win=14){
+  if(win==14) ir<-sum(fipsdf$newcases[fipsdf$x14==1])/(fipsdf$population[1])*100000
+  if(win==21) ir<-sum(fipsdf$newcases[fipsdf$x21==1])/(fipsdf$population[1])*100000
+  if(win==28) ir<-sum(fipsdf$newcases[fipsdf$x28==1])/(fipsdf$population[1])*100000
+  if(win==7) ir<-sum(fipsdf$newcases[fipsdf$x7==1])/(fipsdf$population[1])*100000
+  fipsname<-fipsdf$FIPS[1]
+  return(list(ir=ir, fips=fipsname, window=win))
+}
+
+calcrates(FIPS11001)
 
 
 
+#irs<-data.frame(fips=NA, ir=NA)
+#for all FIPS codes
+irs<-NULL
+
+
+for(i in 1:length(fipslist)){
+  tname<-get(fipslist[i])
+  xtemp<-calcrates(tname)
+  #irs$fips[i]<-xtemp$fips
+  irs[i]<-xtemp$ir
+}
+
+
+irdf<-cbind.data.frame(fipslist, irs)
+irdf$fipscode<-gsub("FIPS", "", irdf$fipslist)
+facshort<-dplyr::select(fac, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility"))
+facshort<-unique(facshort)
+irfac<-merge(irdf, facshort, by.x="fipscode", by.y="FIPS_IN")
+irfac<-irfac[irfac$ir!=Inf, ]
+
+ord<-order(irfac$irs)
+ord<-rev(ord)
+irfac<-irfac[ord, ]
+
+irfac
+
+#top 20 highest
+irfac %>%
+  dplyr::select(c("irs", "Work_State_Name", "Facility")) %>%
+  dplyr::slice_head(n=20)
+
+
+#top 20 lowest
+irfac %>%
+  dplyr::select(c("irs", "Work_State_Name", "Facility")) %>%
+  dplyr::slice_tail(n=20)
+
+
+         
+
+
+
+
+  
+  
 # Additional examples
 
 # FIPS25017 %>%
@@ -215,4 +276,11 @@ print(paste("DC=", dcIR), quote=FALSE)
 
 IR<-cbind.data.frame(dcfips, IR)
 print(IR)
+
+
+
+
+
+
+
 
