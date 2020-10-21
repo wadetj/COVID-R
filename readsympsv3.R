@@ -237,7 +237,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-09-06"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-09-13"), ]
 
 
 #format dates like SAS
