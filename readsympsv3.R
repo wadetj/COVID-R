@@ -2,6 +2,7 @@
 #start with new data file 9/30/2020
 #HHS aggregates ILI, CLI and ED visits at county
 #adds new commute file- v9 10/28/2020   
+#Note for week of 11-9, data pulled on 11-10 due to holiday on 11-11
 
 #Input files: updated to commute_results_v8.csv,  10/14/2020
 #HHS changed data names and added fields, had to modify lines 44-47
@@ -36,10 +37,11 @@ comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 ###EDIT THIS FILE
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_11_04_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_11_10_20.csv", sep=",", na.strings=c("", "NA", "."))
 
 #xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_data_county_aggregates_timeseries.csv", sep=",", na.strings=c("", "NA", "."))
 xtemp[, date:=as.Date(date)]
+
 
 #drop unnecessary vars
 #10/21/2020- raw data set was changed with new fields added, variable selection modified 
@@ -188,7 +190,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 ### EDIT THIS FILE - need to add quote="\""
 #For week of 8/19 only- will need to add "S" to file to read in file with state imputed data
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_10_28_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_04_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -237,18 +239,16 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-09-27"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-10-04"), ]
 
 
 #format dates like SAS
 allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
-#CHANGE FILE NAMES EVERY RUN
-#S added to indicated state data
-#remove S once this is integrated - S removed as of 8/19
+#CHANGE/EDIT FILE NAMES EVERY RUN
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1104.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_04_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1110.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_10_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 
