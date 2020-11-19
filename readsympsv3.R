@@ -27,9 +27,9 @@ library(data.table)
 library(dplyr)
 
 #changed to communte_results_v9 on 10/18/2020
-#com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v8.csv", sep=",",  na.strings=c("", "NA", "."))
+com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v9.csv", sep=",",  na.strings=c("", "NA", "."))
 #read from local directory until git hub is updated
-com<-fread(input="C:/Users/wadet/Documents/covid/commute_results_v9.csv", sep=",",  na.strings=c("", "NA", "."))
+#com<-fread(input="C:/Users/wadet/Documents/covid/commute_results_v9.csv", sep=",",  na.strings=c("", "NA", "."))
 
 
 #commute file with just work facility and unique FIPS code
