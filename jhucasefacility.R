@@ -14,13 +14,16 @@ library(timsRstuff)
 library(openxlsx)
 library(MASS)
 
-source('C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/covidtsmav.R')
+#source('C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/covidtsmav.R')
+source("https://raw.githubusercontent.com/wadetj/COVID-R/master/covidtsmav.R")
+
+
 
 #fac<-read.csv("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/facility_commutes.csv", stringsAsFactors=FALSE)
 
 #fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/facility_commutes.csv", stringsAsFactors=FALSE)
 
-fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v7.csv", stringsAsFactors=FALSE)
+fac<-read.csv("https://raw.githubusercontent.com/wadetj/COVID-R/master/data/commute_results_v9.csv", stringsAsFactors=FALSE)
 
 
 #read in population data
@@ -135,7 +138,7 @@ irs<-NULL
 
 for(i in 1:length(fipslist)){
   tname<-get(fipslist[i])
-  xtemp<-calcrates(tname)
+  xtemp<-calcrates(tname, win=14)
   #irs$fips[i]<-xtemp$fips
   irs[i]<-xtemp$ir
 }
@@ -165,13 +168,7 @@ irfac %>%
   dplyr::select(c("irs", "Work_State_Name", "Facility")) %>%
   dplyr::slice_tail(n=20)
 
-
-         
-
-
-
-
-  
+ 
   
 # Additional examples
 
@@ -276,11 +273,5 @@ print(paste("DC=", dcIR), quote=FALSE)
 
 IR<-cbind.data.frame(dcfips, IR)
 print(IR)
-
-
-
-
-
-
 
 
