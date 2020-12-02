@@ -37,10 +37,8 @@ comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 ###EDIT THIS FILE
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_11_18_20.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_11_24_20.csv", sep=",", na.strings=c("", "NA", "."))
 
-#11/18/2020 noted 5 missing hospital fips codes which did not have any additional info
-#dropped these observaions
 xtemp<-xtemp[!is.na(hospital_county_fips)]
 
 #xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_data_county_aggregates_timeseries.csv", sep=",", na.strings=c("", "NA", "."))
@@ -193,7 +191,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 
 ### EDIT THIS FILE - need to add quote="\""
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_10_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_18_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -241,7 +239,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
-#EDIT THIS EVERY TIME keep dates within 5 weeks
+#EDIT THIS EVERY TIME keep dates within at least 5 weeks
 allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-10-11"), ]
 
 
@@ -250,8 +248,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
 #CHANGE/EDIT FILE NAMES EVERY RUN
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1118.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_18_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1124.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_11_24_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 
