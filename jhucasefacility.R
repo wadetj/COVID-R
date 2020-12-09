@@ -64,7 +64,7 @@ for(i in 1:length(facls)) {
 #calculate 2 week incidence 
 sum(FIPS37135$newcases[FIPS37135$x14==1])/(FIPS37135$population[1])*100000
 #For SAS comparisons
-write.csv(FIPS37135, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/FIPS37135.csv", row.names=FALSE, na=".")
+#write.csv(FIPS37135, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/FIPS37135.csv", row.names=FALSE, na=".")
 
 #two week plot for HSF
 FIPS37135 %>%
