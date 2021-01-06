@@ -25,6 +25,7 @@
 #For next week- add underscore before date in file names
 #Note it appears for week of 01/06 there were no reports from the state of GA after 12/21
 #Changed no report criteria to 5 days of no reporting instead of 0
+
 rm(list=ls())
 starttime<-Sys.time()
 library(timsRstuff)
