@@ -1,8 +1,6 @@
  #reads new HHS symptom file ed_data_county_aggregates_timeseries
 #start with new data file 9/30/2020
 #HHS aggregates ILI, CLI and ED visits at county
-#adds new commute file- v9 10/28/2020   
-#Note for week of 11-9, data pulled on 11-10 due to holiday on 11-11
 
 #Input files: updated to commute_results_v8.csv,  10/14/2020
 #HHS changed data names and added fields, had to modify lines 44-47
@@ -13,12 +11,18 @@
 # previous symptom file (ILI_CLI_by_facility XXXX)
 #  updated to commute_results9.csv, 10-28-2020
 
+#NOTES UPDATES AND CHANGES
+#adds new commute file- v9 10/28/2020   
+#Note for week of 11-9, data pulled on 11-10 due to holiday on 11-11
 #calculates state level ILI and CLI for facilities with missing data
 #Missing facilities
-
 #add variable called stateflag to indicate state data used when no local data
 #ILI_CLI_by_facility.txt saved as ILI_CLI_by_facilityS.txt to indicate 
 #state imputation (only for 8/12/2020 file)
+#01/06/2021, changed date format to YYYYMMDD to save files
+#For 01/06/2021, read in 20 days of data from HHS due to taking off last week in Dec
+#For 01/06/2021- read in previous file is Dec 23 (two weeks prior)
+#For next week- add underscore before date in file names
 
 rm(list=ls())
 starttime<-Sys.time()
@@ -36,8 +40,8 @@ com<-fread(input="https://raw.githubusercontent.com/wadetj/COVID-R/master/data/c
 comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
-###EDIT THIS FILE
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_12_16_20.csv", sep=",", na.strings=c("", "NA", "."))
+###EDIT THIS FILE-note change to file name format YYYYMMDD
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210106.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[!is.na(hospital_county_fips)]
 
@@ -189,9 +193,10 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 
 #read in prior file for autoregression and format
 
-### EDIT THIS FILE 
+### EDIT THIS FILE - note no file for 12/30- took week off
+#For 1/13 will need to update to new file naming convention YYYYMMDD
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_12_09_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_12_23_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -240,16 +245,17 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within at least 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-11-1"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-11-22"), ]
 
 
 #format dates like SAS
 allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 
 #CHANGE/EDIT FILE NAMES EVERY RUN
+#note change to date format in file name
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps1216.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_12_16_20.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210106.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210106.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 
