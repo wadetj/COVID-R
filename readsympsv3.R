@@ -25,6 +25,11 @@
 #For next week- add underscore before date in file names
 #Note it appears for week of 01/06 there were no reports from the state of GA after 12/21
 #Changed no report criteria to 5 days of no reporting instead of 0
+#For 1/13/20 downloaded additional data through 12/20-to account for missing data over holiday
+#Missing data for GA seems represented now
+#For 1/13 Ohio did not report symptoms since Jan 1
+#OH facilities with Kentucky counties in communiting areas still had data
+#Added check for states with missing data
 
 rm(list=ls())
 starttime<-Sys.time()
@@ -43,7 +48,7 @@ comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 ###EDIT THIS FILE-note change to file name format YYYYMMDD
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210106.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210113.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[!is.na(hospital_county_fips)]
 
@@ -115,6 +120,10 @@ statesymps[, ilipct:=(ili/total)*100]
 
 #change names for state data
 setnames(statesymps, c("cli", "ili", "total", "reported", "clipct", "ilipct"), c("cli.state", "ili.state", "total.state", "reported.state", "clipct.state", "ilipct.state"))
+#check for missing and unreported data at state level
+#Ignore HI, PR, VI
+#flag anything else >5 or so
+table(statesymps$state[statesymps$total==0])
 
 
 #NEED TO ACCOUNT FOR MULTIPLE FACILITIES IN SAME FIPS_IN
@@ -138,8 +147,13 @@ sympscom$reported=ifelse(sympscom$reported>0, 1, 0)
 #will need to revisit this to account for no reporting from Georgia
 
 noreport<-sympscom[, .("report"=sum(reported), "fips"=mean(FIPS_IN)), by=.(Facility)]
-noreport<-noreport[report<5, ]
-
+#just check facilities with less than 10 reports
+noreport[report<10,]
+noreport[report<15,]
+#for 1/13 include two ohio facilties with 12 missing reports
+#hand checked, missing from 1/1
+#Steinmart Plaza and Islander Park - both Ohio, use state data
+noreport<-noreport[report<10, ]
 
 print(noreport)
 # merge state data to symptoms and then substitute for non-reporting?
@@ -198,12 +212,11 @@ sympscom[stateflag=="YES" & !is.na(clipct), ]
 table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 
 
-#read in prior file for autoregression and format
+#read in prior file for autoregression and format 
 
-### EDIT THIS FILE - note no file for 12/30- took week off
 #For 1/13 will need to update to new file naming convention YYYYMMDD
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_12_23_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210106.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -252,7 +265,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within at least 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-11-22"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2020-11-29"), ]
 
 
 #format dates like SAS
@@ -261,8 +274,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #CHANGE/EDIT FILE NAMES EVERY RUN
 #note change to date format in file name
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210106.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210106.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210113.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210113.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 
