@@ -33,6 +33,7 @@
 #For 1/20- Ohio still not reporting anything from 1/1/21 through 1/19/21
 #2/3/21- still no reports for state of Ohio
 #2/10/21- still no reports for state of Ohio since Jan 1
+#2/17/21- still no reports for Ohio since Jan 1
 
 rm(list=ls())
 starttime<-Sys.time()
@@ -51,7 +52,7 @@ comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 ###EDIT THIS FILE-note change to file name format YYYYMMDD
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210210.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20217210.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[!is.na(hospital_county_fips)]
 
@@ -278,8 +279,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #CHANGE/EDIT FILE NAMES EVERY RUN
 #note change to date format in file name
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210210.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210210.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210217.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210217.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #allsymps2[ed_date=="08FEB2021" & minimal=="NO"]
