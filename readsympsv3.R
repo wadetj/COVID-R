@@ -34,6 +34,7 @@
 #2/3/21- still no reports for state of Ohio
 #2/10/21- still no reports for state of Ohio since Jan 1
 #2/24/21- still no reports for Ohio since Jan 1
+#03/03/21- still no reports for Ohio since Jan 1
 
 rm(list=ls())
 starttime<-Sys.time()
@@ -52,7 +53,7 @@ comuni<-com[, c("FIPS_IN", "Work_State_Name", "Work_County_Name", "Facility")]
 comuni<-unique(comuni)
 
 ###EDIT THIS FILE-note change to file name format YYYYMMDD
-xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210224.csv", sep=",", na.strings=c("", "NA", "."))
+xtemp<-fread(file="C:/Users/wadet/Documents/covid/ed_20210303.csv", sep=",", na.strings=c("", "NA", "."))
 
 xtemp<-xtemp[!is.na(hospital_county_fips)]
 
@@ -222,7 +223,7 @@ table(sympscom$Facility[sympscom$stateflag=="YES" & !is.na(sympscom$clipct)])
 
 #For 1/13 will need to update to new file naming convention YYYYMMDD
 #prevsymp<-read.table("C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/ILI_CLI_by_facility_7_22_20.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
-prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210217.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
+prevsymp<-read.table("C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210224.txt", sep=";", stringsAsFactors=FALSE, na.strings=c("", "NA", "."), header=TRUE, quote="\"")
 
 names(sympscom)
 
@@ -271,7 +272,7 @@ allsymps2<-allsymps2[, -c("index", "dupflag")]
 allsymps2<-allsymps2[order(Facility, ed_date, symptom)]
 
 #EDIT THIS EVERY TIME keep dates within at least 5 weeks
-allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2021-01-03"), ]
+allsymps2<-allsymps2[allsymps2$ed_date>=as.Date("2021-01-10"), ]
 
 
 #format dates like SAS
@@ -280,8 +281,8 @@ allsymps2$ed_date<-toupper(format(allsymps2$ed_date, "%d%b%Y"))
 #CHANGE/EDIT FILE NAMES EVERY RUN
 #note change to date format in file name
 #write.table(allsymps2, "C:/Users/twade/OneDrive - Environmental Protection Agency (EPA)/Coronavirus/data/Symptoms/allsymps2729.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210224.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
-write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210224.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/allsymps20210303.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
+write.table(allsymps2, "C:/Users/wadet/Documents/covid/ILI_CLI_by_facility_20210303.txt", row.names=FALSE, na="", sep=";", quote=FALSE)
 
 
 #allsymps2[ed_date=="08FEB2021" & minimal=="NO"]
